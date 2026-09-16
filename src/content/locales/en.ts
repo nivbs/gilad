@@ -31,6 +31,7 @@ export const enEdition: Edition = {
       body:
         "Gilad and Niv met in Tel Aviv and spent every single day together until Gilad left. The beginning of everything — unedited, unannounced, unforgettable.",
       kicker: "Tel Aviv",
+      gags: ["grindr"],
     },
     {
       id: "dispatch-feb-11-2025",
@@ -39,6 +40,7 @@ export const enEdition: Edition = {
       body:
         "They said goodbye for the first time and understood, without needing to say it out loud, that they would stay together. The love was already endless.",
       kicker: "Dispatch",
+      gags: ["heart"],
     },
     {
       id: "dispatch-late-feb-2025",
@@ -47,6 +49,7 @@ export const enEdition: Edition = {
       body:
         "A joint flight to Barcelona provided the official narrative for friends: how they met, when they met, why they met. The real story involved a dating app and two closets. This newspaper prefers the truth.",
       kicker: "Investigation",
+      gags: ["grindr", "airplane"],
     },
     {
       id: "dispatch-mar-15-2025",
@@ -56,6 +59,7 @@ export const enEdition: Edition = {
         "After a party, Niv — drunk, on a video call with Gilad — rode an electric scooter and had an accident. In that moment, Niv understood this was not a fling. This was for life.",
       kicker: "Breaking",
       breaking: true,
+      gags: ["scooter"],
     },
     {
       id: "dispatch-jun-aug-2025",
@@ -64,6 +68,7 @@ export const enEdition: Edition = {
       body:
         "They lived together in a series of sublets while hiding the fact from both families and friends. To everyone else, they were best friends. To each other, they were home.",
       kicker: "Undercover",
+      gags: ["key"],
     },
     {
       id: "dispatch-sep-2025",
@@ -72,6 +77,7 @@ export const enEdition: Edition = {
       body:
         "Niv flew to the Netherlands to meet Gilad's family and friends for the first time, officially as his friend. They smoked a lot of weed, attempted truffles for psychoactive adventures, and had an unreasonable amount of fun.",
       kicker: "Foreign Desk",
+      gags: ["weed"],
     },
     {
       id: "dispatch-dec-2025-jan-2026",
@@ -80,6 +86,7 @@ export const enEdition: Edition = {
       body:
         "London → Netherlands → Denmark → Netherlands. They drank a lot, spent a lot of money, and made a lot of memories. Financial journalism would not approve. Love journalism gives it five stars.",
       kicker: "Travel",
+      gags: ["flags"],
     },
     {
       id: "dispatch-jun-2026",
@@ -88,6 +95,7 @@ export const enEdition: Edition = {
       body:
         "Gilad officially finished his studies. They moved into the best apartment ever at Ben Gurion 50, Tel Aviv. Living together, openly in their private world, in love.",
       kicker: "Home",
+      gags: ["home"],
     },
     {
       id: "dispatch-jun-12-2026",
@@ -97,6 +105,7 @@ export const enEdition: Edition = {
         "The cover story era ended. No more \"best friends.\" No more edited narratives for families and friends. On this day, Gilad and Niv came out officially — together, as they always were underneath.",
       kicker: "Breaking",
       breaking: true,
+      gags: ["pride"],
     },
   ],
   nicknames: [

@@ -1,0 +1,19 @@
+import type { TargetAndTransition, Transition } from "motion/react";
+
+import type { DispatchGag } from "@/content/types";
+
+export type GagAnimationConfig = {
+  entrance: TargetAndTransition;
+  initial: TargetAndTransition;
+  transition: Transition;
+  idle: TargetAndTransition;
+  idleTransition: Transition;
+  durationMs: number;
+};
+
+export type GagConfig = {
+  icon: string;
+  caption: string;
+};
+
+export type { DispatchGag };

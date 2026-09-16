@@ -1,3 +1,4 @@
+import { BirthdayRibbon } from "@/components/BirthdayRibbon/BirthdayRibbon";
 import type { Edition } from "@/content/types";
 
 type MastheadProps = {
@@ -7,7 +8,8 @@ type MastheadProps = {
 
 export function Masthead({ masthead, isRtl }: MastheadProps) {
   return (
-    <header className="border-b-4 border-double border-ink pb-6 text-center">
+    <header className="relative border-b-4 border-double border-ink pb-6 text-center">
+      <BirthdayRibbon isRtl={isRtl} />
       <p className="text-xs uppercase tracking-[0.25em] text-ink-muted">
         {masthead.tagline}
       </p>

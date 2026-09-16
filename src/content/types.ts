@@ -12,6 +12,17 @@ export type BlessingParagraph = {
   emphasis?: "opening" | "highlight" | "closing";
 };
 
+export type DispatchGag =
+  | "grindr"
+  | "scooter"
+  | "pride"
+  | "heart"
+  | "airplane"
+  | "key"
+  | "weed"
+  | "flags"
+  | "home";
+
 export type Dispatch = {
   id: string;
   date: string;
@@ -19,6 +30,7 @@ export type Dispatch = {
   body: string;
   kicker?: string;
   breaking?: boolean;
+  gags?: DispatchGag[];
 };
 
 export type Nickname = {

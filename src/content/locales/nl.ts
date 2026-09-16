@@ -31,6 +31,7 @@ export const nlEdition: Edition = {
       body:
         "Gilad en Niv ontmoetten elkaar in Tel Aviv en waren elke dag samen tot Gilad vertrok. Het begin van alles — onbewerkt, onaangekondigd, onvergetelijk.",
       kicker: "Tel Aviv",
+      gags: ["grindr"],
     },
     {
       id: "dispatch-feb-11-2025",
@@ -39,6 +40,7 @@ export const nlEdition: Edition = {
       body:
         "Ze namen voor het eerst afscheid en begrepen, zonder het hardop te zeggen, dat ze bij elkaar zouden blijven. De liefde was al eindeloos.",
       kicker: "Bericht",
+      gags: ["heart"],
     },
     {
       id: "dispatch-late-feb-2025",
@@ -47,6 +49,7 @@ export const nlEdition: Edition = {
       body:
         "Een gezamenlijke vlucht naar Barcelona leverde het officiële verhaal voor vrienden: hoe ze elkaar ontmoetten, wanneer, waarom. Het echte verhaal ging over een datingapp en twee kasten. Deze krant geeft de voorkeur aan de waarheid.",
       kicker: "Onderzoek",
+      gags: ["grindr", "airplane"],
     },
     {
       id: "dispatch-mar-15-2025",
@@ -56,6 +59,7 @@ export const nlEdition: Edition = {
         "Na een feest — dronken, op videobel met Gilad — reed Niv op een elektrische step en had een ongeluk. In dat moment begreep Niv dat dit geen vluchtige romance was. Dit was voor het leven.",
       kicker: "Laatste nieuws",
       breaking: true,
+      gags: ["scooter"],
     },
     {
       id: "dispatch-jun-aug-2025",
@@ -64,6 +68,7 @@ export const nlEdition: Edition = {
       body:
         "Ze woonden samen in een reeks sublets terwijl ze het verborgen voor beide families en vrienden. Voor de rest waren ze beste vrienden. Voor elkaar waren ze thuis.",
       kicker: "Undercover",
+      gags: ["key"],
     },
     {
       id: "dispatch-sep-2025",
@@ -72,6 +77,7 @@ export const nlEdition: Edition = {
       body:
         "Niv vloog naar Nederland om voor het eerst Gilads familie en vrienden te ontmoeten, officieel als zijn vriend. Ze rookten veel wiet, probeerden truffels voor psychoactieve avonturen, en hadden een onredelijk goede tijd.",
       kicker: "Buitenland",
+      gags: ["weed"],
     },
     {
       id: "dispatch-dec-2025-jan-2026",
@@ -80,6 +86,7 @@ export const nlEdition: Edition = {
       body:
         "Londen → Nederland → Denemarken → Nederland. Ze dronken veel, gaven veel geld uit, en maakten veel herinneringen. Financiële journalistiek zou het niet goedkeuren. Liefdesjournalistiek geeft vijf sterren.",
       kicker: "Reizen",
+      gags: ["flags"],
     },
     {
       id: "dispatch-jun-2026",
@@ -88,6 +95,7 @@ export const nlEdition: Edition = {
       body:
         "Gilad rondde officieel zijn studie af. Ze verhuisden naar het beste appartement ooit op Ben Gurion 50, Tel Aviv. Samenwonend, openlijk in hun privéwereld, verliefd.",
       kicker: "Thuis",
+      gags: ["home"],
     },
     {
       id: "dispatch-jun-12-2026",
@@ -97,6 +105,7 @@ export const nlEdition: Edition = {
         "Het tijdperk van dekmantelverhalen eindigde. Geen \"beste vrienden\" meer. Geen bewerkte verhalen meer voor families en vrienden. Op deze dag kwamen Gilad en Niv officieel uit de kast — samen, zoals ze altijd al waren onder de oppervlakte.",
       kicker: "Laatste nieuws",
       breaking: true,
+      gags: ["pride"],
     },
   ],
   nicknames: [

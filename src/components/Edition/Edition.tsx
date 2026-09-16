@@ -1,7 +1,9 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion, type Variants } from "motion/react";
 
+import { BirthdayConfetti } from "@/components/BirthdayConfetti/BirthdayConfetti";
 import { Blessing } from "@/components/Blessing/Blessing";
 import { Colophon } from "@/components/Colophon/Colophon";
 import { Dispatches } from "@/components/Dispatches/Dispatches";
@@ -21,6 +23,7 @@ export function Edition() {
   const { locale, setLocale, isRtl, isReady } = useLocale();
   const edition = getEdition(locale);
   const { isOpen, prefersReducedMotion, open, skip } = usePaperIntro();
+  const [showConfetti, setShowConfetti] = useState(false);
   const timeline = useDispatchTimeline({
     dispatches: edition.dispatches,
     defaultExpandedId: "dispatch-feb-6-2025",
@@ -55,6 +58,16 @@ export function Edition() {
     });
   };
 
+  useEffect(() => {
+    if (!isOpen || prefersReducedMotion) {
+      return;
+    }
+
+    setShowConfetti(true);
+    const timer = window.setTimeout(() => setShowConfetti(false), 3200);
+    return () => window.clearTimeout(timer);
+  }, [isOpen, prefersReducedMotion]);
+
   const sectionVariants: Variants = {
     hidden: { opacity: 0, y: 24 },
     visible: (index: number) => ({
@@ -74,6 +87,7 @@ export function Edition() {
 
   return (
     <>
+      <BirthdayConfetti active={showConfetti} prefersReducedMotion={prefersReducedMotion} />
       <PaperIntro
         isOpen={isOpen}
         prefersReducedMotion={prefersReducedMotion}
@@ -145,6 +159,7 @@ export function Edition() {
                   expandedId={timeline.expandedId}
                   ui={edition.ui}
                   isRtl={isRtl}
+                  prefersReducedMotion={prefersReducedMotion}
                   onOpen={timeline.open}
                   onToggle={timeline.toggle}
                   onNext={timeline.goNext}

@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "motion/react";
 
+import { DispatchGag } from "@/components/DispatchGag/DispatchGag";
 import { NewspaperButton } from "@/components/NewspaperButton/NewspaperButton";
 import type { Dispatch, UiStrings } from "@/content/types";
 
@@ -10,6 +11,7 @@ type DispatchesProps = {
   expandedId: string;
   ui: UiStrings;
   isRtl: boolean;
+  prefersReducedMotion: boolean;
   onOpen: (id: string) => void;
   onToggle: (id: string) => void;
   onNext: () => void;
@@ -25,6 +27,7 @@ function DispatchItem({
   hasPrev,
   ui,
   isRtl,
+  prefersReducedMotion,
   onToggle,
   onNext,
   onPrev,
@@ -36,6 +39,7 @@ function DispatchItem({
   hasPrev: boolean;
   ui: UiStrings;
   isRtl: boolean;
+  prefersReducedMotion: boolean;
   onToggle: () => void;
   onNext: () => void;
   onPrev: () => void;
@@ -46,7 +50,7 @@ function DispatchItem({
     <article
       id={dispatch.id}
       className={`scroll-mt-36 border newspaper-rule p-4 transition-colors lg:scroll-mt-8 ${
-        isExpanded ? "bg-white/40 shadow-sm" : "bg-transparent"
+        isExpanded ? "dispatch-expanded bg-white/40 shadow-sm" : "bg-transparent"
       } ${isRtl ? "font-hebrew text-right" : ""}`}
     >
       <div className="mb-2 flex flex-wrap items-center gap-2">
@@ -77,7 +81,18 @@ function DispatchItem({
             transition={{ duration: 0.35, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <p className="mt-4 text-base leading-relaxed text-ink">{dispatch.body}</p>
+            <div className="relative overflow-visible">
+              {dispatch.gags?.map((gag, gagIndex) => (
+                <DispatchGag
+                  key={`${dispatch.id}-${gag}`}
+                  gag={gag}
+                  index={gagIndex}
+                  isRtl={isRtl}
+                  prefersReducedMotion={prefersReducedMotion}
+                />
+              ))}
+              <p className="mt-4 text-base leading-relaxed text-ink">{dispatch.body}</p>
+            </div>
             <div className="mt-6 flex flex-wrap gap-3">
               <NewspaperButton variant="secondary" onClick={onToggle}>
                 {ui.closeFiling}
@@ -109,6 +124,7 @@ export function Dispatches({
   expandedId,
   ui,
   isRtl,
+  prefersReducedMotion,
   onOpen,
   onToggle,
   onNext,
@@ -136,6 +152,7 @@ export function Dispatches({
             hasPrev={expandedId === dispatch.id && index > 0}
             ui={ui}
             isRtl={isRtl}
+            prefersReducedMotion={prefersReducedMotion}
             onToggle={() => {
               if (expandedId === dispatch.id) {
                 onToggle(dispatch.id);
