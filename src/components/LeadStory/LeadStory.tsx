@@ -1,0 +1,46 @@
+import type { Edition } from "@/content/types";
+
+type LeadStoryProps = {
+  leadStory: Edition["leadStory"];
+};
+
+export function LeadStory({ leadStory }: LeadStoryProps) {
+  return (
+    <article className="border-b newspaper-rule py-8">
+      <div className="mb-4 flex flex-wrap items-center gap-2">
+        <span className="kicker px-2 py-0.5 text-[10px] font-semibold">
+          {leadStory.kicker}
+        </span>
+        <span className="text-xs uppercase tracking-widest text-ink-muted">
+          Lead Story
+        </span>
+      </div>
+      <h2 className="font-display text-3xl font-bold leading-tight text-ink md:text-5xl">
+        {leadStory.headline}
+      </h2>
+      <p className="mt-3 text-sm italic text-ink-muted">{leadStory.byline}</p>
+      <div className="mt-6 grid gap-8 lg:grid-cols-12">
+        <div className="lg:col-span-8">
+          <p className="text-lg font-semibold leading-relaxed first-letter:float-left first-letter:mr-2 first-letter:font-display first-letter:text-6xl first-letter:font-bold first-letter:leading-none">
+            {leadStory.lede}
+          </p>
+          {leadStory.body.map((paragraph) => (
+            <p
+              key={paragraph.slice(0, 40)}
+              className="mt-4 text-base leading-relaxed text-ink"
+            >
+              {paragraph}
+            </p>
+          ))}
+        </div>
+        <aside className="lg:col-span-4">
+          <div className="photo-well flex aspect-[4/5] items-end p-4">
+            <p className="text-xs uppercase tracking-wider text-ink-muted">
+              {leadStory.photoCaption}
+            </p>
+          </div>
+        </aside>
+      </div>
+    </article>
+  );
+}

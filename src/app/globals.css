@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  --newsprint: #f4f0e6;
+  --ink: #1a1a1a;
+  --ink-muted: #4a4a4a;
+  --rule: #c8c0b0;
+  --feyenoord: #c8102e;
+  --kicker-bg: #1a1a1a;
+}
+
+@theme inline {
+  --color-newsprint: var(--newsprint);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-rule: var(--rule);
+  --color-feyenoord: var(--feyenoord);
+  --font-display: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-body: var(--font-newsreader), Georgia, "Times New Roman", serif;
+  --font-hebrew: var(--font-noto-hebrew), Arial, sans-serif;
+}
+
+body {
+  background: var(--newsprint);
+  color: var(--ink);
+  font-family: var(--font-newsreader), Georgia, "Times New Roman", serif;
+}
+
+.newspaper-rule {
+  border-color: var(--rule);
+}
+
+.kicker {
+  background: var(--kicker-bg);
+  color: var(--newsprint);
+  font-family: var(--font-newsreader), Georgia, serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.breaking-kicker {
+  background: var(--feyenoord);
+  color: white;
+}
+
+.photo-well {
+  border: 1px solid var(--rule);
+  background: linear-gradient(
+    135deg,
+    rgba(200, 192, 176, 0.35) 0%,
+    rgba(244, 240, 230, 0.8) 100%
+  );
+}
