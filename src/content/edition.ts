@@ -25,6 +25,7 @@ export const edition: Edition = {
   },
   dispatches: [
     {
+      id: "dispatch-feb-6-2025",
       date: "6 February 2025",
       headline: "First Encounter on Pinocchio Street",
       body:
@@ -32,6 +33,7 @@ export const edition: Edition = {
       kicker: "Tel Aviv",
     },
     {
+      id: "dispatch-feb-11-2025",
       date: "11 February 2025",
       headline: "The First Goodbye",
       body:
@@ -39,6 +41,7 @@ export const edition: Edition = {
       kicker: "Dispatch",
     },
     {
+      id: "dispatch-late-feb-2025",
       date: "Late February 2025",
       headline: "Barcelona Cover Story Filed",
       body:
@@ -46,6 +49,7 @@ export const edition: Edition = {
       kicker: "Investigation",
     },
     {
+      id: "dispatch-mar-15-2025",
       date: "15 March 2025",
       headline: "Scooter Incident Confirms Long-Term Commitment",
       body:
@@ -53,6 +57,7 @@ export const edition: Edition = {
       kicker: "Breaking",
     },
     {
+      id: "dispatch-jun-aug-2025",
       date: "June–August 2025",
       headline: "Secret Sublets in Tel Aviv",
       body:
@@ -60,6 +65,7 @@ export const edition: Edition = {
       kicker: "Undercover",
     },
     {
+      id: "dispatch-sep-2025",
       date: "September 2025",
       headline: "First Netherlands Visit — Still \"Just Friends\"",
       body:
@@ -67,6 +73,7 @@ export const edition: Edition = {
       kicker: "Foreign Desk",
     },
     {
+      id: "dispatch-dec-2025-jan-2026",
       date: "December 2025 – January 2026",
       headline: "Month-Long European Tour",
       body:
@@ -74,6 +81,7 @@ export const edition: Edition = {
       kicker: "Travel",
     },
     {
+      id: "dispatch-jun-2026",
       date: "June 2026",
       headline: "Studies Complete; Ben Gurion 50 Becomes Home",
       body:
@@ -81,6 +89,7 @@ export const edition: Edition = {
       kicker: "Home",
     },
     {
+      id: "dispatch-jun-12-2026",
       date: "12 June 2026",
       headline: "Officially Out of the Closet",
       body:

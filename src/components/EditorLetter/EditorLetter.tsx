@@ -1,12 +1,16 @@
+"use client";
+
+import { NewspaperButton } from "@/components/NewspaperButton/NewspaperButton";
 import type { Edition } from "@/content/types";
 
 type EditorLetterProps = {
   editorLetter: Edition["editorLetter"];
+  onBackToIndex: () => void;
 };
 
-export function EditorLetter({ editorLetter }: EditorLetterProps) {
+export function EditorLetter({ editorLetter, onBackToIndex }: EditorLetterProps) {
   return (
-    <section className="border-b newspaper-rule py-8">
+    <section id="editor-letter" className="scroll-mt-28 border-b newspaper-rule py-8 lg:scroll-mt-8">
       <div className="mx-auto max-w-2xl text-center">
         <p className="kicker mb-4 inline-block px-2 py-0.5 text-[10px] font-semibold">
           Op-Ed
@@ -33,6 +37,11 @@ export function EditorLetter({ editorLetter }: EditorLetterProps) {
         <p className="mt-8 font-display text-xl italic text-ink">
           {editorLetter.signoff}
         </p>
+        <div className="mt-8 flex justify-center">
+          <NewspaperButton variant="secondary" onClick={onBackToIndex}>
+            Back to index
+          </NewspaperButton>
+        </div>
       </div>
     </section>
   );

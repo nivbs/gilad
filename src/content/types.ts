@@ -1,4 +1,5 @@
 export type Dispatch = {
+  id: string;
   date: string;
   headline: string;
   body: string;

@@ -1,10 +1,14 @@
+"use client";
+
+import { NewspaperButton } from "@/components/NewspaperButton/NewspaperButton";
 import type { Edition } from "@/content/types";
 
 type LeadStoryProps = {
   leadStory: Edition["leadStory"];
+  onContinue: () => void;
 };
 
-export function LeadStory({ leadStory }: LeadStoryProps) {
+export function LeadStory({ leadStory, onContinue }: LeadStoryProps) {
   return (
     <article className="border-b newspaper-rule py-8">
       <div className="mb-4 flex flex-wrap items-center gap-2">
@@ -40,6 +44,11 @@ export function LeadStory({ leadStory }: LeadStoryProps) {
             </p>
           </div>
         </aside>
+      </div>
+      <div className="mt-8 flex justify-center">
+        <NewspaperButton onClick={onContinue}>
+          Continue to the timeline →
+        </NewspaperButton>
       </div>
     </article>
   );
