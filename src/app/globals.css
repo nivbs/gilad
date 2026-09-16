@@ -59,6 +59,75 @@ body {
     inset 0 0 0 5px var(--ink);
 }
 
+.edition-sheet {
+  box-shadow:
+    0 12px 40px rgba(26, 26, 26, 0.12),
+    inset 0 0 0 1px var(--rule),
+    inset 0 0 0 4px var(--newsprint),
+    inset 0 0 0 5px var(--ink);
+}
+
+.section-divider {
+  position: relative;
+}
+
+.section-divider::before {
+  content: "§";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--newsprint);
+  padding: 0 0.75rem;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+.blessing-insert {
+  background: #faf7f0;
+  border: 2px double var(--ink);
+}
+
+.blessing-corners {
+  position: relative;
+}
+
+.blessing-corner {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-color: var(--ink);
+  border-style: solid;
+}
+
+.blessing-corner-tl {
+  top: -0.5rem;
+  left: -0.5rem;
+  border-width: 2px 0 0 2px;
+}
+
+.blessing-corner-tr {
+  top: -0.5rem;
+  right: -0.5rem;
+  border-width: 2px 2px 0 0;
+}
+
+.blessing-corner-bl {
+  bottom: -0.5rem;
+  left: -0.5rem;
+  border-width: 0 0 2px 2px;
+}
+
+.blessing-corner-br {
+  bottom: -0.5rem;
+  right: -0.5rem;
+  border-width: 0 2px 2px 0;
+}
+
+[dir="rtl"] body {
+  font-family: var(--font-noto-hebrew), Arial, sans-serif;
+}
+
 .paper-grain {
   background-image:
     radial-gradient(rgba(26, 26, 26, 0.03) 1px, transparent 1px),

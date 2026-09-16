@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "motion/react";
 
 import { NewspaperButton } from "@/components/NewspaperButton/NewspaperButton";
+import type { UiStrings } from "@/content/types";
 
 type PaperIntroProps = {
   isOpen: boolean;
@@ -10,6 +11,7 @@ type PaperIntroProps = {
   title: string;
   subtitle: string;
   tagline: string;
+  ui: UiStrings;
   onOpen: () => void;
   onSkip: () => void;
 };
@@ -20,6 +22,7 @@ export function PaperIntro({
   title,
   subtitle,
   tagline,
+  ui,
   onOpen,
   onSkip,
 }: PaperIntroProps) {
@@ -60,7 +63,7 @@ export function PaperIntro({
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              A special edition awaits
+              {ui.specialEditionAwaits}
             </motion.p>
 
             <motion.div
@@ -69,9 +72,9 @@ export function PaperIntro({
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <NewspaperButton onClick={onOpen}>Open the edition</NewspaperButton>
+              <NewspaperButton onClick={onOpen}>{ui.openEdition}</NewspaperButton>
               <NewspaperButton variant="secondary" onClick={onSkip}>
-                Skip
+                {ui.skip}
               </NewspaperButton>
             </motion.div>
           </div>

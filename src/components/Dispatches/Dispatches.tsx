@@ -3,11 +3,13 @@
 import { AnimatePresence, motion } from "motion/react";
 
 import { NewspaperButton } from "@/components/NewspaperButton/NewspaperButton";
-import type { Dispatch } from "@/content/types";
+import type { Dispatch, UiStrings } from "@/content/types";
 
 type DispatchesProps = {
   dispatches: Dispatch[];
   expandedId: string;
+  ui: UiStrings;
+  isRtl: boolean;
   onOpen: (id: string) => void;
   onToggle: (id: string) => void;
   onNext: () => void;
@@ -15,16 +17,14 @@ type DispatchesProps = {
   onGoToLetter: () => void;
 };
 
-function isBreaking(dispatch: Dispatch) {
-  return dispatch.kicker === "Breaking";
-}
-
 function DispatchItem({
   dispatch,
   index,
   isExpanded,
   hasNext,
   hasPrev,
+  ui,
+  isRtl,
   onToggle,
   onNext,
   onPrev,
@@ -34,18 +34,20 @@ function DispatchItem({
   isExpanded: boolean;
   hasNext: boolean;
   hasPrev: boolean;
+  ui: UiStrings;
+  isRtl: boolean;
   onToggle: () => void;
   onNext: () => void;
   onPrev: () => void;
 }) {
-  const breaking = isBreaking(dispatch);
+  const breaking = dispatch.breaking === true;
 
   return (
     <article
       id={dispatch.id}
-      className={`scroll-mt-28 border newspaper-rule p-4 transition-colors lg:scroll-mt-8 ${
+      className={`scroll-mt-36 border newspaper-rule p-4 transition-colors lg:scroll-mt-8 ${
         isExpanded ? "bg-white/40 shadow-sm" : "bg-transparent"
-      }`}
+      } ${isRtl ? "font-hebrew text-right" : ""}`}
     >
       <div className="mb-2 flex flex-wrap items-center gap-2">
         {dispatch.kicker && (
@@ -78,15 +80,15 @@ function DispatchItem({
             <p className="mt-4 text-base leading-relaxed text-ink">{dispatch.body}</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <NewspaperButton variant="secondary" onClick={onToggle}>
-                Close filing
+                {ui.closeFiling}
               </NewspaperButton>
               {hasPrev && (
                 <NewspaperButton variant="secondary" onClick={onPrev}>
-                  Previous dispatch
+                  {ui.previousDispatch}
                 </NewspaperButton>
               )}
               {hasNext && (
-                <NewspaperButton onClick={onNext}>Next dispatch</NewspaperButton>
+                <NewspaperButton onClick={onNext}>{ui.nextDispatch}</NewspaperButton>
               )}
             </div>
           </motion.div>
@@ -95,7 +97,7 @@ function DispatchItem({
 
       {!isExpanded && (
         <div className="mt-4">
-          <NewspaperButton onClick={onToggle}>Read filing →</NewspaperButton>
+          <NewspaperButton onClick={onToggle}>{ui.readFiling}</NewspaperButton>
         </div>
       )}
     </article>
@@ -105,6 +107,8 @@ function DispatchItem({
 export function Dispatches({
   dispatches,
   expandedId,
+  ui,
+  isRtl,
   onOpen,
   onToggle,
   onNext,
@@ -112,13 +116,13 @@ export function Dispatches({
   onGoToLetter,
 }: DispatchesProps) {
   return (
-    <section id="dispatches" className="border-b newspaper-rule py-8">
+    <section id="dispatches" className="section-divider border-b newspaper-rule py-8">
       <div className="mb-6 flex items-baseline justify-between border-b newspaper-rule pb-2">
         <h2 className="font-display text-2xl font-bold uppercase tracking-wide text-ink">
-          Dispatches
+          {ui.dispatches}
         </h2>
         <span className="text-xs uppercase tracking-widest text-ink-muted">
-          Field Reports
+          {ui.fieldReports}
         </span>
       </div>
       <div className="space-y-4">
@@ -130,6 +134,8 @@ export function Dispatches({
             isExpanded={expandedId === dispatch.id}
             hasNext={expandedId === dispatch.id && index < dispatches.length - 1}
             hasPrev={expandedId === dispatch.id && index > 0}
+            ui={ui}
+            isRtl={isRtl}
             onToggle={() => {
               if (expandedId === dispatch.id) {
                 onToggle(dispatch.id);
@@ -143,9 +149,7 @@ export function Dispatches({
         ))}
       </div>
       <div className="mt-8 flex justify-center">
-        <NewspaperButton onClick={onGoToLetter}>
-          Letter from the editor →
-        </NewspaperButton>
+        <NewspaperButton onClick={onGoToLetter}>{ui.letterFromEditor}</NewspaperButton>
       </div>
     </section>
   );

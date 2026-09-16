@@ -2,23 +2,24 @@
 
 import { motion, type Variants } from "motion/react";
 
+import { Blessing } from "@/components/Blessing/Blessing";
 import { Colophon } from "@/components/Colophon/Colophon";
 import { Dispatches } from "@/components/Dispatches/Dispatches";
 import { EditorLetter } from "@/components/EditorLetter/EditorLetter";
+import { LanguageBar } from "@/components/LanguageBar/LanguageBar";
 import { LeadStory } from "@/components/LeadStory/LeadStory";
 import { Masthead } from "@/components/Masthead/Masthead";
 import { PaperIntro } from "@/components/PaperIntro/PaperIntro";
 import { SidebarGrid } from "@/components/SidebarGrid/SidebarGrid";
 import { TimelineRail } from "@/components/TimelineRail/TimelineRail";
-import type { Edition as EditionContent } from "@/content/types";
+import { getEdition } from "@/content/locales";
 import { useDispatchTimeline } from "@/hooks/useDispatchTimeline";
+import { useLocale } from "@/hooks/useLocale";
 import { usePaperIntro } from "@/hooks/usePaperIntro";
 
-type EditionProps = {
-  edition: EditionContent;
-};
-
-export function Edition({ edition }: EditionProps) {
+export function Edition() {
+  const { locale, setLocale, isRtl, isReady } = useLocale();
+  const edition = getEdition(locale);
   const { isOpen, prefersReducedMotion, open, skip } = usePaperIntro();
   const timeline = useDispatchTimeline({
     dispatches: edition.dispatches,
@@ -35,6 +36,13 @@ export function Edition({ edition }: EditionProps) {
 
   const scrollToLetter = () => {
     document.getElementById("editor-letter")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
+  const scrollToBlessing = () => {
+    document.getElementById("blessing")?.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
@@ -60,6 +68,10 @@ export function Edition({ edition }: EditionProps) {
     }),
   };
 
+  if (!isReady) {
+    return null;
+  }
+
   return (
     <>
       <PaperIntro
@@ -68,25 +80,35 @@ export function Edition({ edition }: EditionProps) {
         title={edition.masthead.title}
         subtitle={edition.masthead.subtitle}
         tagline={edition.masthead.tagline}
+        ui={edition.ui}
         onOpen={open}
         onSkip={skip}
       />
 
       {isOpen && (
-        <main className="min-h-screen bg-newsprint px-4 py-8 md:px-8 lg:px-12">
+        <main
+          className="min-h-screen bg-newsprint px-4 py-8 md:px-8 lg:px-12"
+          dir={isRtl ? "rtl" : "ltr"}
+        >
           <motion.div
-            className="paper-grain edition-frame mx-auto max-w-6xl border-2 border-ink bg-newsprint px-4 py-8 shadow-lg md:px-8 md:py-12"
+            className="paper-grain edition-sheet edition-frame mx-auto max-w-6xl border-2 border-ink bg-newsprint px-4 py-4 shadow-lg md:px-8 md:py-8"
             initial={prefersReducedMotion ? false : { opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
+            <LanguageBar
+              locale={locale}
+              editionLabel={edition.ui.languageEdition}
+              onChange={setLocale}
+            />
+
             <motion.div
               custom={0}
               initial={prefersReducedMotion ? undefined : "hidden"}
               animate={prefersReducedMotion ? undefined : "visible"}
               variants={prefersReducedMotion ? undefined : sectionVariants}
             >
-              <Masthead masthead={edition.masthead} />
+              <Masthead masthead={edition.masthead} isRtl={isRtl} />
             </motion.div>
 
             <motion.div
@@ -97,6 +119,8 @@ export function Edition({ edition }: EditionProps) {
             >
               <LeadStory
                 leadStory={edition.leadStory}
+                ui={edition.ui}
+                isRtl={isRtl}
                 onContinue={scrollToDispatches}
               />
             </motion.div>
@@ -106,17 +130,21 @@ export function Edition({ edition }: EditionProps) {
               initial={prefersReducedMotion ? undefined : "hidden"}
               animate={prefersReducedMotion ? undefined : "visible"}
               variants={prefersReducedMotion ? undefined : sectionVariants}
-              className="flex flex-col gap-8 lg:flex-row"
+              className={`flex flex-col gap-8 lg:flex-row ${isRtl ? "lg:flex-row-reverse" : ""}`}
             >
               <TimelineRail
                 dispatches={edition.dispatches}
                 activeId={timeline.activeId}
+                ui={edition.ui}
+                isRtl={isRtl}
                 onSelect={timeline.open}
               />
               <div className="min-w-0 flex-1">
                 <Dispatches
                   dispatches={edition.dispatches}
                   expandedId={timeline.expandedId}
+                  ui={edition.ui}
+                  isRtl={isRtl}
                   onOpen={timeline.open}
                   onToggle={timeline.toggle}
                   onNext={timeline.goNext}
@@ -136,6 +164,8 @@ export function Edition({ edition }: EditionProps) {
                 sidebarColumns={edition.sidebarColumns}
                 nicknames={edition.nicknames}
                 hebrewNicknames={edition.hebrewNicknames}
+                ui={edition.ui}
+                isRtl={isRtl}
               />
             </motion.div>
 
@@ -147,12 +177,29 @@ export function Edition({ edition }: EditionProps) {
             >
               <EditorLetter
                 editorLetter={edition.editorLetter}
+                ui={edition.ui}
+                isRtl={isRtl}
                 onBackToIndex={scrollToIndex}
+                onGoToBlessing={scrollToBlessing}
               />
             </motion.div>
 
             <motion.div
               custom={5}
+              initial={prefersReducedMotion ? undefined : "hidden"}
+              animate={prefersReducedMotion ? undefined : "visible"}
+              variants={prefersReducedMotion ? undefined : sectionVariants}
+            >
+              <Blessing
+                blessing={edition.blessing}
+                ui={edition.ui}
+                isRtl={isRtl}
+                onBackToLetter={scrollToLetter}
+              />
+            </motion.div>
+
+            <motion.div
+              custom={6}
               initial={prefersReducedMotion ? undefined : "hidden"}
               animate={prefersReducedMotion ? undefined : "visible"}
               variants={prefersReducedMotion ? undefined : sectionVariants}

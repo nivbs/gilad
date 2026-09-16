@@ -1,26 +1,30 @@
-import type { HebrewNickname, Nickname, SidebarColumn } from "@/content/types";
+import type { HebrewNickname, Nickname, SidebarColumn, UiStrings } from "@/content/types";
 
 type SidebarGridProps = {
   sidebarColumns: SidebarColumn[];
   nicknames: Nickname[];
   hebrewNicknames: HebrewNickname[];
+  ui: UiStrings;
+  isRtl: boolean;
 };
 
 function NicknameGlossary({
   nicknames,
   hebrewNicknames,
+  ui,
+  isRtl,
 }: {
   nicknames: Nickname[];
   hebrewNicknames: HebrewNickname[];
+  ui: UiStrings;
+  isRtl: boolean;
 }) {
   return (
-    <aside className="border newspaper-rule p-4">
+    <aside className={`border newspaper-rule p-4 ${isRtl ? "font-hebrew text-right" : ""}`}>
       <p className="kicker mb-3 inline-block px-2 py-0.5 text-[10px] font-semibold">
-        Glossary
+        {ui.glossary}
       </p>
-      <h3 className="font-display text-lg font-bold text-ink">
-        Approved Nicknames
-      </h3>
+      <h3 className="font-display text-lg font-bold text-ink">{ui.approvedNicknames}</h3>
       <ul className="mt-3 space-y-2">
         {nicknames.map((nickname) => (
           <li key={nickname.name} className="text-sm leading-relaxed">
@@ -31,9 +35,7 @@ function NicknameGlossary({
           </li>
         ))}
       </ul>
-      <h4 className="mt-5 font-display text-base font-bold text-ink">
-        Hebrew Edition
-      </h4>
+      <h4 className="mt-5 font-display text-base font-bold text-ink">{ui.hebrewEdition}</h4>
       <ul className="mt-2 space-y-3">
         {hebrewNicknames.map((item) => (
           <li key={item.hebrew} className="text-sm leading-relaxed">
@@ -49,9 +51,15 @@ function NicknameGlossary({
   );
 }
 
-function SidebarColumnCard({ column }: { column: SidebarColumn }) {
+function SidebarColumnCard({
+  column,
+  isRtl,
+}: {
+  column: SidebarColumn;
+  isRtl: boolean;
+}) {
   return (
-    <aside className="border newspaper-rule p-4">
+    <aside className={`border newspaper-rule p-4 ${isRtl ? "font-hebrew text-right" : ""}`}>
       {column.kicker && (
         <p className="kicker mb-3 inline-block px-2 py-0.5 text-[10px] font-semibold">
           {column.kicker}
@@ -62,7 +70,9 @@ function SidebarColumnCard({ column }: { column: SidebarColumn }) {
         {column.items.map((item) => (
           <li
             key={item.slice(0, 50)}
-            className="text-sm leading-relaxed text-ink before:mr-2 before:content-['—']"
+            className={`text-sm leading-relaxed text-ink ${
+              isRtl ? "before:ml-2 before:content-['—']" : "before:mr-2 before:content-['—']"
+            }`}
           >
             {item}
           </li>
@@ -76,24 +86,28 @@ export function SidebarGrid({
   sidebarColumns,
   nicknames,
   hebrewNicknames,
+  ui,
+  isRtl,
 }: SidebarGridProps) {
   return (
-    <section className="border-b newspaper-rule py-8">
+    <section className="section-divider border-b newspaper-rule py-8">
       <div className="mb-6 flex items-baseline justify-between border-b newspaper-rule pb-2">
         <h2 className="font-display text-2xl font-bold uppercase tracking-wide text-ink">
-          Sidebar
+          {ui.sidebar}
         </h2>
         <span className="text-xs uppercase tracking-widest text-ink-muted">
-          Supplementary Reporting
+          {ui.supplementaryReporting}
         </span>
       </div>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <NicknameGlossary
           nicknames={nicknames}
           hebrewNicknames={hebrewNicknames}
+          ui={ui}
+          isRtl={isRtl}
         />
         {sidebarColumns.map((column) => (
-          <SidebarColumnCard key={column.title} column={column} />
+          <SidebarColumnCard key={column.title} column={column} isRtl={isRtl} />
         ))}
       </div>
     </section>
