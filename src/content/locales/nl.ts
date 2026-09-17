@@ -241,6 +241,24 @@ export const nlEdition: Edition = {
         },
       ],
     },
+    {
+      title: "Perez-gasredactie",
+      kicker: "Vlekken op de verkeerde plekken",
+      items: [
+        {
+          text: "Na bepaalde atmosferische gebeurtenissen dient de onderbroek een vervolgbericht in. De redactie heeft het bewijs gezien. Ze had liever een minder toegewijde correspondent.",
+          tmi: true,
+        },
+        {
+          text: "Officiële lijn van het onderwerp: hij is het niet. Het is het gassysteem van de familie Perez — stedelijke infrastructuur met, volgens hem, een ongewoon persoonlijke laatste kilometer.",
+          tmi: true,
+        },
+        {
+          text: "Deze krant bevestigt twee feiten: Gilad blijft extreem knap, en de Perez-leiding eindigt op een plek die geen gemeentekaart durft af te drukken.",
+          tmi: true,
+        },
+      ],
+    },
   ],
   editorLetter: {
     headline: "Brief van de redacteur",

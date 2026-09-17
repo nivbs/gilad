@@ -241,6 +241,24 @@ export const enEdition: Edition = {
         },
       ],
     },
+    {
+      title: "Perez Gas Desk",
+      kicker: "Marks in the Wrong Places",
+      items: [
+        {
+          text: "After certain atmospheric events, the underwear files a follow-up. The desk has seen the evidence. It wishes it had a less dedicated correspondent.",
+          tmi: true,
+        },
+        {
+          text: "Official line from the subject: it is not him. It is the Perez Family's Gas System — city-scale infrastructure that, according to him, has an unusually personal last mile.",
+          tmi: true,
+        },
+        {
+          text: "This newspaper can confirm two facts: Gilad remains extremely handsome, and the Perez pipeline ends somewhere no municipal map would dare print.",
+          tmi: true,
+        },
+      ],
+    },
   ],
   editorLetter: {
     headline: "Letter from the Editor",

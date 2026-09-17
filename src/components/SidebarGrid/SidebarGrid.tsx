@@ -78,6 +78,32 @@ function SidebarColumnCard({
   isRtl: boolean;
   ui: UiStrings;
 }) {
+  const isFullyTmi = column.items.length > 0 && column.items.every((item) => item.tmi);
+  const listItemClass = `text-sm leading-relaxed text-ink md:text-base ${
+    isRtl ? "before:ml-2 before:content-['—']" : "before:mr-2 before:content-['—']"
+  }`;
+
+  const itemList = (
+    <ul className="mt-4 space-y-3">
+      {column.items.map((item) => (
+        <li key={item.text.slice(0, 50)} className={listItemClass}>
+          {item.tmi && !isFullyTmi ? (
+            <TmiGate
+              variant="block"
+              label={ui.tmiVersion}
+              lockedLabel={ui.tmiLocked}
+              className="tmi-gate--sidebar-item"
+            >
+              {item.text}
+            </TmiGate>
+          ) : (
+            item.text
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+
   return (
     <aside
       className={`sidebar-card border newspaper-rule p-6 ${isRtl ? "font-hebrew text-right" : ""}`}
@@ -87,32 +113,26 @@ function SidebarColumnCard({
           {column.kicker}
         </p>
       )}
-      <h3 className="font-display text-xl font-bold text-ink md:text-2xl">
-        {column.title}
-      </h3>
-      <ul className="mt-4 space-y-3">
-        {column.items.map((item) => (
-          <li
-            key={item.text.slice(0, 50)}
-            className={`text-sm leading-relaxed text-ink md:text-base ${
-              isRtl ? "before:ml-2 before:content-['—']" : "before:mr-2 before:content-['—']"
-            }`}
-          >
-            {item.tmi ? (
-              <TmiGate
-                variant="block"
-                label={ui.tmiVersion}
-                lockedLabel={ui.tmiLocked}
-                className="tmi-gate--sidebar-item"
-              >
-                {item.text}
-              </TmiGate>
-            ) : (
-              item.text
-            )}
-          </li>
-        ))}
-      </ul>
+      {isFullyTmi ? (
+        <TmiGate
+          variant="block"
+          label={ui.tmiVersion}
+          lockedLabel={ui.tmiLocked}
+          className="tmi-gate--sidebar-item"
+        >
+          <h3 className="font-display text-xl font-bold text-ink md:text-2xl">
+            {column.title}
+          </h3>
+          {itemList}
+        </TmiGate>
+      ) : (
+        <>
+          <h3 className="font-display text-xl font-bold text-ink md:text-2xl">
+            {column.title}
+          </h3>
+          {itemList}
+        </>
+      )}
     </aside>
   );
 }
