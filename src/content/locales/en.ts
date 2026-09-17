@@ -234,7 +234,7 @@ export const enEdition: Edition = {
       },
       {
         text:
-          "I am always here for you — in your jubilee year, when good things come your way. And remember: you are closer to 30 than to 20. Mazel tov!",
+          "I am always here for you. And remember: you are closer to 30 than to 20. Mazel tov!",
         emphasis: "highlight",
       },
     ],

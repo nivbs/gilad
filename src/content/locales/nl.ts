@@ -239,7 +239,7 @@ export const nlEdition: Edition = {
       },
       {
         text:
-          "Ik ben er altijd voor je — ook in het jubeljaar dat je ten goede mag komen. En onthoud: je bent dichter bij de 30 dan bij de 20. Mazel tov!",
+          "Ik ben er altijd voor je. En onthoud: je bent dichter bij de 30 dan bij de 20. Mazel tov!",
         emphasis: "highlight",
       },
     ],
