@@ -5,12 +5,11 @@ import { motion } from "motion/react";
 import type { LeadStoryPartyBurstProps } from "@/components/LeadStory/types";
 
 export function LeadStoryPartyBurst({
-  active,
   prefersReducedMotion,
   confettiPieces,
   cakePieces,
 }: LeadStoryPartyBurstProps) {
-  if (!active || prefersReducedMotion) {
+  if (prefersReducedMotion) {
     return null;
   }
 
@@ -27,17 +26,18 @@ export function LeadStoryPartyBurst({
             borderRadius: piece.isCircle ? "50%" : "1px",
             backgroundColor: piece.color,
           }}
-          initial={{ opacity: 1, y: -20, rotate: piece.rotate }}
+          initial={{ opacity: 0.9, y: "-12%", rotate: piece.rotate }}
           animate={{
-            opacity: [1, 1, 0],
-            y: ["0%", "55%", "100%"],
-            x: [0, piece.drift, piece.drift * 1.3],
-            rotate: piece.rotate + 280,
+            opacity: [0.9, 0.9, 0.6, 0],
+            y: ["-12%", "45%", "110%"],
+            x: [0, piece.drift * 0.6, piece.drift],
+            rotate: piece.rotate + 360,
           }}
           transition={{
             duration: piece.duration,
             delay: piece.delay,
-            ease: "easeOut",
+            repeat: Infinity,
+            ease: "linear",
           }}
         />
       ))}
@@ -46,17 +46,16 @@ export function LeadStoryPartyBurst({
           key={`cake-${piece.id}`}
           className="absolute text-2xl drop-shadow-md md:text-3xl"
           style={{ left: piece.left, top: piece.top }}
-          initial={{ opacity: 0, y: -40, scale: 0.4, rotate: piece.rotate }}
+          initial={{ y: 0, rotate: piece.rotate }}
           animate={{
-            opacity: [0, 1, 1, 0],
-            y: [-40, 8, 12, 20],
-            scale: [0.4, 1.15, 1, 0.9],
-            rotate: [piece.rotate, -piece.rotate * 0.3, piece.rotate * 0.2, 0],
+            y: [0, -6, 0],
+            rotate: [piece.rotate, -piece.rotate * 0.4, piece.rotate],
           }}
           transition={{
             duration: piece.duration,
             delay: piece.delay,
-            ease: "easeOut",
+            repeat: Infinity,
+            ease: "easeInOut",
           }}
         >
           {piece.emoji}

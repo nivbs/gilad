@@ -1,7 +1,5 @@
 import type { CakePiece, ConfettiPiece } from "@/components/LeadStory/types";
 
-export const PARTY_BURST_DURATION_MS = 2500;
-
 const colors = [
   "var(--newsprint)",
   "var(--ink)",

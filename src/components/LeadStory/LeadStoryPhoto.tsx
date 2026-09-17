@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "motion/react";
 
 import { LeadStoryPartyBurst } from "@/components/LeadStory/LeadStoryPartyBurst";
 import type { LeadStoryPhotoProps } from "@/components/LeadStory/types";
@@ -14,18 +13,10 @@ export function LeadStoryPhoto({
   isRtl,
   prefersReducedMotion,
 }: LeadStoryPhotoProps) {
-  const { burstActive, confettiPieces, cakePieces, triggerBurst } =
-    useLeadStoryPartyBurst({ prefersReducedMotion });
-
-  const figureProps = prefersReducedMotion
-    ? {}
-    : {
-        onViewportEnter: triggerBurst,
-        viewport: { once: true, amount: 0.45 },
-      };
+  const { confettiPieces, cakePieces } = useLeadStoryPartyBurst();
 
   return (
-    <motion.figure className="lead-story-photo" {...figureProps}>
+    <figure className="lead-story-photo">
       <div className="photo-well relative aspect-[4/5] overflow-hidden">
         <Image
           src={photoSrc}
@@ -36,7 +27,6 @@ export function LeadStoryPhoto({
           priority
         />
         <LeadStoryPartyBurst
-          active={burstActive}
           prefersReducedMotion={prefersReducedMotion}
           confettiPieces={confettiPieces}
           cakePieces={cakePieces}
@@ -49,6 +39,6 @@ export function LeadStoryPhoto({
       >
         {photoCaption}
       </figcaption>
-    </motion.figure>
+    </figure>
   );
 }

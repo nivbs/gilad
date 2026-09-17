@@ -29,7 +29,6 @@ export type LeadStoryPhotoProps = {
 };
 
 export type LeadStoryPartyBurstProps = {
-  active: boolean;
   prefersReducedMotion: boolean;
   confettiPieces: ConfettiPiece[];
   cakePieces: CakePiece[];
