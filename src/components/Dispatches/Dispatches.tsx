@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "motion/react";
 
-import { DispatchGag } from "@/components/DispatchGag/DispatchGag";
+import { DispatchGagStrip } from "@/components/DispatchGag/DispatchGagStrip";
 import { NewspaperButton } from "@/components/NewspaperButton/NewspaperButton";
 import type { Dispatch, UiStrings } from "@/content/types";
 
@@ -81,17 +81,21 @@ function DispatchItem({
             transition={{ duration: 0.35, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="relative overflow-visible">
-              {dispatch.gags?.map((gag, gagIndex) => (
-                <DispatchGag
-                  key={`${dispatch.id}-${gag}`}
-                  gag={gag}
-                  index={gagIndex}
+            <div
+              className={`mt-4 flex flex-col gap-4 ${
+                isRtl ? "md:flex-row-reverse" : "md:flex-row"
+              } md:items-start md:gap-6`}
+            >
+              {dispatch.gags && dispatch.gags.length > 0 && (
+                <DispatchGagStrip
+                  gags={dispatch.gags}
                   isRtl={isRtl}
                   prefersReducedMotion={prefersReducedMotion}
                 />
-              ))}
-              <p className="mt-4 text-base leading-relaxed text-ink">{dispatch.body}</p>
+              )}
+              <p className="order-2 min-w-0 flex-1 text-base leading-relaxed text-ink md:order-1">
+                {dispatch.body}
+              </p>
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
               <NewspaperButton variant="secondary" onClick={onToggle}>

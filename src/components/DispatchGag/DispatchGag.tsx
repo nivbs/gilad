@@ -10,17 +10,11 @@ import type { DispatchGag as DispatchGagType } from "@/content/types";
 
 type DispatchGagProps = {
   gag: DispatchGagType;
-  index: number;
   isRtl: boolean;
   prefersReducedMotion: boolean;
 };
 
-export function DispatchGag({
-  gag,
-  index,
-  isRtl,
-  prefersReducedMotion,
-}: DispatchGagProps) {
+export function DispatchGag({ gag, isRtl, prefersReducedMotion }: DispatchGagProps) {
   const config = gagConfig[gag];
   const animation = gagAnimations[gag];
   const [phase, setPhase] = useState<"entrance" | "idle">(
@@ -57,23 +51,20 @@ export function DispatchGag({
   const transition =
     phase === "entrance" ? animation.transition : animation.idleTransition;
 
-  const offsetTop = 8 + index * 88;
-
   return (
     <motion.div
-      className={`dispatch-gag dispatch-gag--${gag} pointer-events-none absolute z-10 flex flex-col items-center ${
-        isRtl ? "left-2" : "right-2"
-      }`}
-      style={{ top: offsetTop }}
+      className={`dispatch-gag dispatch-gag--${gag} pointer-events-none flex flex-col items-center ${
+        prefersReducedMotion ? "" : "dispatch-gag--animated"
+      } ${isRtl ? "dispatch-gag--rtl" : ""}`}
       aria-hidden
       initial={initial}
       animate={animate}
       transition={transition}
     >
-      <div className="dispatch-gag-icon relative h-20 w-20 md:h-28 md:w-28">
+      <div className="dispatch-gag-icon relative h-16 w-16 md:h-24 md:w-24">
         <Image src={config.icon} alt="" fill className="object-contain drop-shadow-md" />
       </div>
-      <p className="dispatch-gag-caption mt-1 text-[9px] uppercase tracking-widest text-ink-muted">
+      <p className="dispatch-gag-caption mt-1 text-center text-[9px] uppercase tracking-widest text-ink-muted">
         {config.caption}
       </p>
     </motion.div>

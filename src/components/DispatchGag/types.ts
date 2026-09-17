@@ -16,4 +16,11 @@ export type GagConfig = {
   caption: string;
 };
 
+export type DispatchGagStripProps = {
+  gags: DispatchGag[];
+  isRtl: boolean;
+  prefersReducedMotion: boolean;
+  className?: string;
+};
+
 export type { DispatchGag };
