@@ -1,3 +1,4 @@
+import { enrichEdition } from "../loveTimeline/enrichEdition";
 import type { Edition, Locale } from "../types";
 import { enEdition } from "./en";
 import { heEdition } from "./he";
@@ -10,7 +11,7 @@ const editions: Record<Locale, Edition> = {
 };
 
 export function getEdition(locale: Locale): Edition {
-  return editions[locale];
+  return enrichEdition(editions[locale]);
 }
 
 export { enEdition, heEdition, nlEdition };

@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "motion/react";
 
 import { DispatchGagStrip } from "@/components/DispatchGag/DispatchGagStrip";
 import { NewspaperButton } from "@/components/NewspaperButton/NewspaperButton";
+import { PhotoSlider } from "@/components/PhotoSlider/PhotoSlider";
 import type { Dispatch, UiStrings } from "@/content/types";
 
 type DispatchesProps = {
@@ -97,6 +98,17 @@ function DispatchItem({
                 {dispatch.body}
               </p>
             </div>
+            {dispatch.photos && dispatch.photos.length > 0 && (
+              <div className="mt-6">
+                <PhotoSlider
+                  photos={dispatch.photos}
+                  size="dispatch"
+                  ariaLabel={dispatch.headline}
+                  isRtl={isRtl}
+                  prefersReducedMotion={prefersReducedMotion}
+                />
+              </div>
+            )}
             <div className="mt-6 flex flex-wrap gap-3">
               <NewspaperButton variant="secondary" onClick={onToggle}>
                 {ui.closeFiling}

@@ -1,11 +1,20 @@
-import type { HebrewNickname, Nickname, SidebarColumn, UiStrings } from "@/content/types";
+import { CorrespondenceDesk } from "@/components/CorrespondenceDesk/CorrespondenceDesk";
+import type {
+  Edition,
+  HebrewNickname,
+  Nickname,
+  SidebarColumn,
+  UiStrings,
+} from "@/content/types";
 
 type SidebarGridProps = {
+  correspondence: Edition["correspondence"];
   sidebarColumns: SidebarColumn[];
   nicknames: Nickname[];
   hebrewNicknames: HebrewNickname[];
   ui: UiStrings;
   isRtl: boolean;
+  prefersReducedMotion: boolean;
 };
 
 function NicknameGlossary({
@@ -95,11 +104,13 @@ function SidebarColumnCard({
 }
 
 export function SidebarGrid({
+  correspondence,
   sidebarColumns,
   nicknames,
   hebrewNicknames,
   ui,
   isRtl,
+  prefersReducedMotion,
 }: SidebarGridProps) {
   return (
     <section className="sidebar-spread section-divider border-b newspaper-rule py-10">
@@ -112,6 +123,12 @@ export function SidebarGrid({
         </span>
       </div>
       <div className="grid gap-6 md:grid-cols-2">
+        <CorrespondenceDesk
+          correspondence={correspondence}
+          ui={ui}
+          isRtl={isRtl}
+          prefersReducedMotion={prefersReducedMotion}
+        />
         <NicknameGlossary
           nicknames={nicknames}
           hebrewNicknames={hebrewNicknames}

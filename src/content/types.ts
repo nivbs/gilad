@@ -31,6 +31,7 @@ export type Dispatch = {
   kicker?: string;
   breaking?: boolean;
   gags?: DispatchGag[];
+  photos?: LifePhoto[];
 };
 
 export type LifePhoto = {
@@ -90,6 +91,8 @@ export type UiStrings = {
   backToLetter: string;
   sidebar: string;
   supplementaryReporting: string;
+  correspondenceDesk: string;
+  longDistance: string;
   glossary: string;
   approvedNicknames: string;
   hebrewEdition: string;
@@ -123,6 +126,12 @@ export type Edition = {
     chapters: LifeYearChapter[];
   };
   dispatches: Dispatch[];
+  correspondence: {
+    kicker: string;
+    headline: string;
+    dek: string;
+    photos: LifePhoto[];
+  };
   sidebarColumns: SidebarColumn[];
   nicknames: Nickname[];
   hebrewNicknames: HebrewNickname[];

@@ -109,7 +109,23 @@ export const nlEdition: Edition = {
       breaking: true,
       gags: ["pride"],
     },
+    {
+      id: "dispatch-rome-2026",
+      date: "Eind juni – begin juli 2026",
+      headline: "Rome na de kast",
+      body:
+        "Nadat Gilad zijn bachelor had afgerond en de verhuizing naar Israël officieel was, gingen ze naar Rome — en Napoli — om het uit de kast komen te vieren. Het dekmantelverhaal was voorbij. De liefde hield nooit op.",
+      kicker: "Reizen",
+      gags: ["airplane", "pride"],
+    },
   ],
+  correspondence: {
+    kicker: "Correspondentie",
+    headline: "Lange afstand",
+    dek:
+      "Screenshots van de WhatsApp-videogesprekken die de jaren bij elkaar hielden.",
+    photos: [],
+  },
   nicknames: [
     { name: "Giladi" },
     { name: "Gili" },
@@ -258,6 +274,8 @@ export const nlEdition: Edition = {
     backToLetter: "Terug naar brief ↑",
     sidebar: "Rubrieken",
     supplementaryReporting: "Aanvullende berichtgeving",
+    correspondenceDesk: "Correspondentie",
+    longDistance: "Lange afstand",
     glossary: "Woordenlijst",
     approvedNicknames: "Goedgekeurde bijnamen",
     hebrewEdition: "Hebreeuwse editie",

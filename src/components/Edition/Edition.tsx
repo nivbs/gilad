@@ -199,11 +199,13 @@ export function Edition() {
               variants={prefersReducedMotion ? undefined : sectionVariants}
             >
               <SidebarGrid
+                correspondence={edition.correspondence}
                 sidebarColumns={edition.sidebarColumns}
                 nicknames={edition.nicknames}
                 hebrewNicknames={edition.hebrewNicknames}
                 ui={edition.ui}
                 isRtl={isRtl}
+                prefersReducedMotion={prefersReducedMotion}
               />
             </motion.div>
 

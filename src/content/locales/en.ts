@@ -109,7 +109,23 @@ export const enEdition: Edition = {
       breaking: true,
       gags: ["pride"],
     },
+    {
+      id: "dispatch-rome-2026",
+      date: "Late June – Early July 2026",
+      headline: "Rome After the Closet",
+      body:
+        "After Gilad finished his bachelor's and the move to Israel was official, they went to Rome — and Napoli — to celebrate coming out. The cover story was over. The love never stopped.",
+      kicker: "Travel",
+      gags: ["airplane", "pride"],
+    },
   ],
+  correspondence: {
+    kicker: "Correspondence Desk",
+    headline: "Long Distance",
+    dek:
+      "Screenshots from the WhatsApp video calls that held the years together.",
+    photos: [],
+  },
   nicknames: [
     { name: "Giladi" },
     { name: "Gili" },
@@ -253,6 +269,8 @@ export const enEdition: Edition = {
     backToLetter: "Back to letter ↑",
     sidebar: "Sidebar",
     supplementaryReporting: "Supplementary Reporting",
+    correspondenceDesk: "Correspondence Desk",
+    longDistance: "Long Distance",
     glossary: "Glossary",
     approvedNicknames: "Approved Nicknames",
     hebrewEdition: "Hebrew Edition",

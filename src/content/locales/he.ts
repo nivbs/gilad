@@ -109,7 +109,22 @@ export const heEdition: Edition = {
       breaking: true,
       gags: ["pride"],
     },
+    {
+      id: "dispatch-rome-2026",
+      date: "סוף יוני – תחילת יולי 2026",
+      headline: "רומא אחרי הארון",
+      body:
+        "אחרי שגלעד סיים את התואר והמעבר לישראל הפך לרשמי, הם טסו לרומא — ולנאפולי — כדי לחגוג היציאה מהארון. עידן סיפורי הכיסוי נגמר. האהבה לא הפסיקה.",
+      kicker: "מסע",
+      gags: ["airplane", "pride"],
+    },
   ],
+  correspondence: {
+    kicker: "מדור מכתבים",
+    headline: "מרחק ארוך",
+    dek: "צילומי מסך משיחות הווידאו בוואטסאפ שקשרו בין השנים.",
+    photos: [],
+  },
   nicknames: [
     { name: "גלעדי" },
     { name: "גילי" },
@@ -257,6 +272,8 @@ export const heEdition: Edition = {
     backToLetter: "חזרה למכתב ↑",
     sidebar: "מדורים",
     supplementaryReporting: "דיווחים משלימים",
+    correspondenceDesk: "מדור מכתבים",
+    longDistance: "מרחק ארוך",
     glossary: "מילון",
     approvedNicknames: "כינויים מאושרים",
     hebrewEdition: "מהדורה עברית",
