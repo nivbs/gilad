@@ -10,7 +10,7 @@ type PhotoEntry = {
 };
 
 function buildCaption({ year, location }: PhotoEntry): string {
-  return location ? `Fig. — ${location}, ${year}` : `Fig. — ${year}`;
+  return location ?? String(year);
 }
 
 function toLifePhoto(entry: PhotoEntry): LifePhoto {
