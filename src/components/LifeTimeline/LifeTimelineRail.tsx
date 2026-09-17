@@ -50,13 +50,15 @@ export function LifeTimelineRail({
                     >
                       {chapter.year}
                     </p>
-                    <p
-                      className={`mt-1 text-[10px] leading-snug uppercase tracking-wider ${
-                        isActive ? "font-semibold text-ink" : "text-ink-muted"
-                      }`}
-                    >
-                      {chapter.headline}
-                    </p>
+                    {chapter.headline && (
+                      <p
+                        className={`mt-1 text-[10px] leading-snug uppercase tracking-wider ${
+                          isActive ? "font-semibold text-ink" : "text-ink-muted"
+                        }`}
+                      >
+                        {chapter.headline}
+                      </p>
+                    )}
                   </div>
                 </div>
               </button>

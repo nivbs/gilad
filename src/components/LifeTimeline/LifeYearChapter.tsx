@@ -38,9 +38,11 @@ export function LifeYearChapter({
           </span>
           <span className="text-xs text-ink-muted">{ui.photoDesk}</span>
         </div>
-        <h3 className="font-display text-xl font-bold text-ink md:text-2xl">
-          {chapter.headline}
-        </h3>
+        {chapter.headline && (
+          <h3 className="font-display text-xl font-bold text-ink md:text-2xl">
+            {chapter.headline}
+          </h3>
+        )}
         <div className="mt-4">
           {hasMultiplePhotos ? (
             <LifePhotoSlider

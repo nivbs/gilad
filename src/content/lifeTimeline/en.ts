@@ -1,9 +1,6 @@
 import { buildLifeChapters } from "@/content/lifeTimeline/chapters";
 
 const headlines: Record<string, string> = {
-  "life-year-2017": "Early Editions",
-  "life-year-2018": "Travels & Mischief",
-  "life-year-2019": "A Quieter Year",
   "life-year-2020": "August in Israel",
   "life-year-2023": "Haifa on Record",
   "life-year-2024": "Netherlands, Tel Aviv, Norway",
@@ -11,9 +8,6 @@ const headlines: Record<string, string> = {
 };
 
 const kickers: Record<string, string> = {
-  "life-year-2017": "Archive",
-  "life-year-2018": "Archive",
-  "life-year-2019": "Archive",
   "life-year-2020": "Foreign Desk",
   "life-year-2023": "Dispatch",
   "life-year-2024": "Travel",

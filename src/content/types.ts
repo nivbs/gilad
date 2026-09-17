@@ -46,7 +46,7 @@ export type LifeYearChapter = {
   id: string;
   year: number;
   kicker?: string;
-  headline: string;
+  headline?: string;
   photos: LifePhoto[];
 };
 

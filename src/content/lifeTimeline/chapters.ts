@@ -5,7 +5,7 @@ type ChapterMeta = {
   id: string;
   year: number;
   kicker?: string;
-  headline: string;
+  headline?: string;
   photoIds: string[];
 };
 
@@ -13,8 +13,6 @@ const chapterMeta: ChapterMeta[] = [
   {
     id: "life-year-2017",
     year: 2017,
-    kicker: "Archive",
-    headline: "Early Editions",
     photoIds: [
       "life-2017-01",
       "life-2017-02",
@@ -26,8 +24,6 @@ const chapterMeta: ChapterMeta[] = [
   {
     id: "life-year-2018",
     year: 2018,
-    kicker: "Archive",
-    headline: "Travels & Mischief",
     photoIds: [
       "life-2018-01",
       "life-2018-02",
@@ -42,8 +38,6 @@ const chapterMeta: ChapterMeta[] = [
   {
     id: "life-year-2019",
     year: 2019,
-    kicker: "Archive",
-    headline: "A Quieter Year",
     photoIds: ["life-2019-01"],
   },
   {
