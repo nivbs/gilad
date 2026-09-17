@@ -32,7 +32,7 @@ const catalog: PhotoEntry[] = [
   { id: "love-sublets-04", src: "/love-timeline/sublets/04.jpg", alt: "Gilad and Niv at home in Tel Aviv", location: "Tel Aviv" },
   { id: "love-sublets-05", src: "/love-timeline/sublets/05.jpg", alt: "Gilad and Niv sharing a moment in Tel Aviv", location: "Tel Aviv" },
   { id: "love-europe-01", src: "/love-timeline/europe/01.jpg", alt: "Gilad and Niv on their European tour" },
-  { id: "love-europe-02", src: "/love-timeline/europe/02.jpg", alt: "Gilad and Niv traveling in Europe" },
+  { id: "love-europe-02", src: "/love-timeline/europe/02.jpg", alt: "Gilad and Niv traveling in Europe", tmi: true },
   { id: "love-europe-03", src: "/love-timeline/europe/03.jpg", alt: "Gilad and Niv during their month-long European trip" },
   { id: "love-europe-04", src: "/love-timeline/europe/04.jpg", alt: "Gilad and Niv on the European tour" },
   { id: "love-home-01", src: "/love-timeline/home/01.jpg", alt: "Gilad and Niv at Ben Gurion 50", location: "Tel Aviv" },
