@@ -15,6 +15,7 @@ import { Masthead } from "@/components/Masthead/Masthead";
 import { PaperIntro } from "@/components/PaperIntro/PaperIntro";
 import { SidebarGrid } from "@/components/SidebarGrid/SidebarGrid";
 import { TimelineRail } from "@/components/TimelineRail/TimelineRail";
+import { TmiProvider } from "@/components/Tmi/TmiProvider";
 import { getEdition } from "@/content/locales";
 import { useDispatchTimeline } from "@/hooks/useDispatchTimeline";
 import { useLocale } from "@/hooks/useLocale";
@@ -108,21 +109,27 @@ export function Edition() {
       />
 
       {isOpen && (
-        <main
-          className="min-h-screen bg-newsprint px-4 py-8 md:px-8 lg:px-12"
-          dir={isRtl ? "rtl" : "ltr"}
+        <TmiProvider
+          ui={edition.ui}
+          isRtl={isRtl}
+          prefersReducedMotion={prefersReducedMotion}
         >
-          <motion.div
-            className="paper-grain edition-sheet edition-frame mx-auto max-w-6xl border-2 border-ink bg-newsprint px-4 py-4 shadow-lg md:px-8 md:py-8"
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+          <main
+            className="min-h-screen bg-newsprint px-4 py-8 md:px-8 lg:px-12"
+            dir={isRtl ? "rtl" : "ltr"}
           >
-            <LanguageBar
-              locale={locale}
-              editionLabel={edition.ui.languageEdition}
-              onChange={setLocale}
-            />
+            <motion.div
+              className="paper-grain edition-sheet edition-frame mx-auto max-w-6xl border-2 border-ink bg-newsprint px-4 py-4 shadow-lg md:px-8 md:py-8"
+              initial={prefersReducedMotion ? false : { opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              <LanguageBar
+                locale={locale}
+                editionLabel={edition.ui.languageEdition}
+                ui={edition.ui}
+                onChange={setLocale}
+              />
 
             <motion.div
               custom={0}
@@ -247,8 +254,9 @@ export function Edition() {
             >
               <Colophon colophon={edition.colophon} />
             </motion.div>
-          </motion.div>
-        </main>
+            </motion.div>
+          </main>
+        </TmiProvider>
       )}
     </>
   );

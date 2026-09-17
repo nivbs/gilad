@@ -1,4 +1,5 @@
 import { CorrespondenceDesk } from "@/components/CorrespondenceDesk/CorrespondenceDesk";
+import { TmiGate } from "@/components/Tmi/TmiGate";
 import type {
   Edition,
   HebrewNickname,
@@ -71,9 +72,11 @@ function NicknameGlossary({
 function SidebarColumnCard({
   column,
   isRtl,
+  ui,
 }: {
   column: SidebarColumn;
   isRtl: boolean;
+  ui: UiStrings;
 }) {
   return (
     <aside
@@ -90,12 +93,23 @@ function SidebarColumnCard({
       <ul className="mt-4 space-y-3">
         {column.items.map((item) => (
           <li
-            key={item.slice(0, 50)}
+            key={item.text.slice(0, 50)}
             className={`text-sm leading-relaxed text-ink md:text-base ${
               isRtl ? "before:ml-2 before:content-['—']" : "before:mr-2 before:content-['—']"
             }`}
           >
-            {item}
+            {item.tmi ? (
+              <TmiGate
+                variant="block"
+                label={ui.tmiVersion}
+                lockedLabel={ui.tmiLocked}
+                className="tmi-gate--sidebar-item"
+              >
+                {item.text}
+              </TmiGate>
+            ) : (
+              item.text
+            )}
           </li>
         ))}
       </ul>
@@ -136,7 +150,7 @@ export function SidebarGrid({
           isRtl={isRtl}
         />
         {sidebarColumns.map((column) => (
-          <SidebarColumnCard key={column.title} column={column} isRtl={isRtl} />
+          <SidebarColumnCard key={column.title} column={column} isRtl={isRtl} ui={ui} />
         ))}
       </div>
     </section>

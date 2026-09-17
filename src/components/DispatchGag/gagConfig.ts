@@ -19,6 +19,7 @@ export const gagConfig: Record<DispatchGag, GagConfig> = {
   },
   weed: {
     icon: "/celebrations/weed-leaf.svg",
+    tmi: true,
   },
   flags: {
     icon: "/celebrations/flags.svg",

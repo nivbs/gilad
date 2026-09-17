@@ -7,9 +7,15 @@ export type LetterParagraph = {
   emphasis?: ParagraphEmphasis;
 };
 
+export type TmiCopy = {
+  text: string;
+  tmi?: boolean;
+};
+
 export type BlessingParagraph = {
   text: string;
   emphasis?: "opening" | "highlight" | "closing";
+  tmi?: boolean;
 };
 
 export type DispatchGag =
@@ -27,7 +33,7 @@ export type Dispatch = {
   id: string;
   date: string;
   headline: string;
-  body: string;
+  body: TmiCopy[];
   kicker?: string;
   breaking?: boolean;
   gags?: DispatchGag[];
@@ -40,6 +46,7 @@ export type LifePhoto = {
   alt: string;
   caption: string;
   placeholder?: boolean;
+  tmi?: boolean;
 };
 
 export type LifeYearChapter = {
@@ -64,7 +71,7 @@ export type HebrewNickname = {
 export type SidebarColumn = {
   title: string;
   kicker?: string;
-  items: string[];
+  items: TmiCopy[];
 };
 
 export type UiStrings = {
@@ -100,6 +107,19 @@ export type UiStrings = {
   specialInsert: string;
   blessingHeadline: string;
   languageEdition: string;
+  tmiVersion: string;
+  tmiUnlock: string;
+  tmiLocked: string;
+  tmiOn: string;
+  tmiLock: string;
+  tmiPasswordKicker: string;
+  tmiPasswordHeadline: string;
+  tmiPasswordDek: string;
+  tmiPasswordPlaceholder: string;
+  tmiPasswordSubmit: string;
+  tmiPasswordWrong: string;
+  tmiPasswordSuccess: string;
+  tmiPasswordClose: string;
 };
 
 export type Edition = {

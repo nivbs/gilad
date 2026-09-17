@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 
-import type { Locale } from "@/content/types";
+import { useTmi } from "@/components/Tmi/TmiProvider";
+import type { Locale, UiStrings } from "@/content/types";
 
 type LanguageOption = {
   locale: Locale;
@@ -20,17 +21,42 @@ const languages: LanguageOption[] = [
 type LanguageBarProps = {
   locale: Locale;
   editionLabel: string;
+  ui: UiStrings;
   onChange: (locale: Locale) => void;
 };
 
-export function LanguageBar({ locale, editionLabel, onChange }: LanguageBarProps) {
+export function LanguageBar({ locale, editionLabel, ui, onChange }: LanguageBarProps) {
+  const { isUnlocked, isReady, requestUnlock, lock } = useTmi();
+
   return (
     <div className="language-bar sticky top-0 z-20 -mx-4 border-b-2 border-double border-ink bg-newsprint px-4 py-3 md:-mx-8 md:px-8">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-[10px] uppercase tracking-[0.2em] text-ink-muted">
           {editionLabel}
         </p>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap items-center gap-2">
+          {isReady && (
+            <button
+              type="button"
+              onClick={() => {
+                if (isUnlocked) {
+                  lock();
+                  return;
+                }
+                requestUnlock();
+              }}
+              aria-pressed={isUnlocked}
+              aria-label={isUnlocked ? ui.tmiOn : ui.tmiLocked}
+              className={`tmi-toggle min-h-11 px-3 py-2 ${
+                isUnlocked ? "tmi-toggle--unlocked" : "tmi-toggle--locked"
+              }`}
+            >
+              {isUnlocked ? ui.tmiOn : ui.tmiUnlock}
+              {isUnlocked && (
+                <span className="tmi-toggle-lock">{ui.tmiLock}</span>
+              )}
+            </button>
+          )}
           {languages.map((language) => {
             const isActive = locale === language.locale;
 

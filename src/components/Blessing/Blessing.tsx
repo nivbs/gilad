@@ -1,6 +1,7 @@
 "use client";
 
 import { NewspaperButton } from "@/components/NewspaperButton/NewspaperButton";
+import { TmiGate } from "@/components/Tmi/TmiGate";
 import type { Edition, UiStrings } from "@/content/types";
 
 type BlessingProps = {
@@ -46,20 +47,35 @@ export function Blessing({ blessing, ui, isRtl, onBackToLetter }: BlessingProps)
               isRtl ? "font-hebrew text-right" : "text-left"
             }`}
           >
-            {blessing.paragraphs.map((paragraph) => (
-              <p
-                key={paragraph.text.slice(0, 40)}
-                className={
-                  paragraph.emphasis === "opening"
-                    ? "font-semibold"
-                    : paragraph.emphasis === "highlight"
-                      ? "font-display text-lg italic md:text-xl"
-                      : ""
-                }
-              >
-                {paragraph.text}
-              </p>
-            ))}
+            {blessing.paragraphs.map((paragraph) => {
+              const paragraphClass =
+                paragraph.emphasis === "opening"
+                  ? "font-semibold"
+                  : paragraph.emphasis === "highlight"
+                    ? "font-display text-lg italic md:text-xl"
+                    : "";
+
+              const paragraphNode = (
+                <p key={paragraph.text.slice(0, 40)} className={paragraphClass}>
+                  {paragraph.text}
+                </p>
+              );
+
+              if (!paragraph.tmi) {
+                return paragraphNode;
+              }
+
+              return (
+                <TmiGate
+                  key={paragraph.text.slice(0, 40)}
+                  variant="block"
+                  label={ui.tmiVersion}
+                  lockedLabel={ui.tmiLocked}
+                >
+                  {paragraphNode}
+                </TmiGate>
+              );
+            })}
           </div>
 
           <p

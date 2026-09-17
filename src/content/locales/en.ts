@@ -33,8 +33,12 @@ export const enEdition: Edition = {
       id: "dispatch-feb-6-2025",
       date: "6 February 2025",
       headline: "First Encounter on Pinocchio Street",
-      body:
-        "Gilad and Niv met in Tel Aviv and spent every single day together until Gilad left. The beginning of everything — unedited, unannounced, unforgettable.",
+      body: [
+        {
+          text:
+            "Gilad and Niv met in Tel Aviv and spent every single day together until Gilad left. The beginning of everything — unedited, unannounced, unforgettable.",
+        },
+      ],
       kicker: "Tel Aviv",
       gags: ["grindr"],
     },
@@ -42,8 +46,12 @@ export const enEdition: Edition = {
       id: "dispatch-feb-11-2025",
       date: "11 February 2025",
       headline: "The First Goodbye",
-      body:
-        "They said goodbye for the first time and understood, without needing to say it out loud, that they would stay together. The love was already endless.",
+      body: [
+        {
+          text:
+            "They said goodbye for the first time and understood, without needing to say it out loud, that they would stay together. The love was already endless.",
+        },
+      ],
       kicker: "Dispatch",
       gags: ["heart"],
     },
@@ -51,8 +59,12 @@ export const enEdition: Edition = {
       id: "dispatch-late-feb-2025",
       date: "Late February 2025",
       headline: "Barcelona Cover Story Filed",
-      body:
-        "A joint flight to Barcelona provided the official narrative for friends: how they met, when they met, why they met. The real story involved a dating app and two closets. This newspaper prefers the truth.",
+      body: [
+        {
+          text:
+            "A joint flight to Barcelona provided the official narrative for friends: how they met, when they met, why they met. The real story involved a dating app and two closets. This newspaper prefers the truth.",
+        },
+      ],
       kicker: "Investigation",
       gags: ["grindr", "airplane"],
     },
@@ -60,8 +72,12 @@ export const enEdition: Edition = {
       id: "dispatch-mar-15-2025",
       date: "15 March 2025",
       headline: "Scooter Incident Confirms Long-Term Commitment",
-      body:
-        "After a party, Niv — drunk, on a video call with Gilad — rode an electric scooter and had an accident. In that moment, Niv understood this was not a fling. This was for life.",
+      body: [
+        {
+          text:
+            "After a party, Niv — drunk, on a video call with Gilad — rode an electric scooter and had an accident. In that moment, Niv understood this was not a fling. This was for life.",
+        },
+      ],
       kicker: "Breaking",
       breaking: true,
       gags: ["scooter"],
@@ -70,8 +86,12 @@ export const enEdition: Edition = {
       id: "dispatch-jun-aug-2025",
       date: "June–August 2025",
       headline: "Secret Sublets in Tel Aviv",
-      body:
-        "They lived together in a series of sublets while hiding the fact from both families and friends. To everyone else, they were best friends. To each other, they were home.",
+      body: [
+        {
+          text:
+            "They lived together in a series of sublets while hiding the fact from both families and friends. To everyone else, they were best friends. To each other, they were home.",
+        },
+      ],
       kicker: "Undercover",
       gags: ["key"],
     },
@@ -79,8 +99,17 @@ export const enEdition: Edition = {
       id: "dispatch-sep-2025",
       date: "September 2025",
       headline: "First Netherlands Visit — Still \"Just Friends\"",
-      body:
-        "Niv flew to the Netherlands to meet Gilad's family and friends for the first time, officially as his friend. They smoked a lot of weed, attempted truffles for psychoactive adventures, and had an unreasonable amount of fun.",
+      body: [
+        {
+          text:
+            "Niv flew to the Netherlands to meet Gilad's family and friends for the first time, officially as his friend.",
+        },
+        {
+          text:
+            "They smoked a lot of weed, attempted truffles for psychoactive adventures, and had an unreasonable amount of fun.",
+          tmi: true,
+        },
+      ],
       kicker: "Foreign Desk",
       gags: ["weed"],
     },
@@ -88,8 +117,12 @@ export const enEdition: Edition = {
       id: "dispatch-dec-2025-jan-2026",
       date: "December 2025 – January 2026",
       headline: "Month-Long European Tour",
-      body:
-        "London → Netherlands → Denmark → Netherlands. They drank a lot, spent a lot of money, and made a lot of memories. Financial journalism would not approve. Love journalism gives it five stars.",
+      body: [
+        {
+          text:
+            "London → Netherlands → Denmark → Netherlands. They drank a lot, spent a lot of money, and made a lot of memories. Financial journalism would not approve. Love journalism gives it five stars.",
+        },
+      ],
       kicker: "Travel",
       gags: ["flags"],
     },
@@ -97,8 +130,12 @@ export const enEdition: Edition = {
       id: "dispatch-jun-2026",
       date: "June 2026",
       headline: "Studies Complete; Ben Gurion 50 Becomes Home",
-      body:
-        "Gilad officially finished his studies. They moved into the best apartment ever at Ben Gurion 50, Tel Aviv. Living together, openly in their private world, in love.",
+      body: [
+        {
+          text:
+            "Gilad officially finished his studies. They moved into the best apartment ever at Ben Gurion 50, Tel Aviv. Living together, openly in their private world, in love.",
+        },
+      ],
       kicker: "Home",
       gags: ["home"],
     },
@@ -106,8 +143,12 @@ export const enEdition: Edition = {
       id: "dispatch-jun-12-2026",
       date: "12 June 2026",
       headline: "Officially Out of the Closet",
-      body:
-        "The cover story era ended. No more \"best friends.\" No more edited narratives for families and friends. On this day, Gilad and Niv came out officially — together, as they always were underneath.",
+      body: [
+        {
+          text:
+            "The cover story era ended. No more \"best friends.\" No more edited narratives for families and friends. On this day, Gilad and Niv came out officially — together, as they always were underneath.",
+        },
+      ],
       kicker: "Breaking",
       breaking: true,
       gags: ["pride"],
@@ -116,8 +157,12 @@ export const enEdition: Edition = {
       id: "dispatch-rome-2026",
       date: "Late June – Early July 2026",
       headline: "Rome After the Closet",
-      body:
-        "After Gilad finished his bachelor's and the move to Israel was official, they went to Rome — and Napoli — to celebrate coming out. The cover story was over. The love never stopped.",
+      body: [
+        {
+          text:
+            "After Gilad finished his bachelor's and the move to Israel was official, they went to Rome — and Napoli — to celebrate coming out. The cover story was over. The love never stopped.",
+        },
+      ],
       kicker: "Travel",
       gags: ["airplane", "pride"],
     },
@@ -153,28 +198,47 @@ export const enEdition: Edition = {
       title: "Sports Desk",
       kicker: "Feyenoord & Left-Wing Football",
       items: [
-        "Primary allegiance: Feyenoord Rotterdam. Non-negotiable.",
-        "If forced to choose an Israeli club: Hapoel Tel Aviv — not for glory, but because they are left-wing and so is he. Ideology over trophies.",
-        "Also competes in: football, tennis, running, voetbaltennis, volleyball, and anything involving a ball and mild suffering.",
-        "Extremely sporty. Extremely handsome. The sports desk cannot explain the toenail situation (see below).",
+        { text: "Primary allegiance: Feyenoord Rotterdam. Non-negotiable." },
+        {
+          text: "If forced to choose an Israeli club: Hapoel Tel Aviv — not for glory, but because they are left-wing and so is he. Ideology over trophies.",
+        },
+        {
+          text: "Also competes in: football, tennis, running, voetbaltennis, volleyball, and anything involving a ball and mild suffering.",
+        },
+        {
+          text: "Extremely sporty. Extremely handsome. The sports desk cannot explain the toenail situation (see below).",
+        },
       ],
     },
     {
       title: "Chocolate Investigation",
       kicker: "A Small but Serious Addiction",
       items: [
-        "Subject loves chocolate with a devotion usually reserved for breaking news.",
-        "Post-joint consumption can reach non-stop levels. Editors have filed no complaint.",
-        "Evening preference: meat. Niv's preference: not meat. The household remains diplomatic.",
+        {
+          text: "Subject loves chocolate with a devotion usually reserved for breaking news.",
+        },
+        {
+          text: "Post-joint consumption can reach non-stop levels. Editors have filed no complaint.",
+          tmi: true,
+        },
+        {
+          text: "Evening preference: meat. Niv's preference: not meat. The household remains diplomatic.",
+        },
       ],
     },
     {
       title: "Toenail Brief",
       kicker: "A Kind Footnote",
       items: [
-        "Gilad is, objectively, extremely handsome. His toenails, however, have chosen a different editorial line.",
-        "This newspaper loves him entirely — including the tough nails that refuse to cooperate.",
-        "Beauty is not perfection. Sometimes it is a man who runs marathons and still loses to his own feet.",
+        {
+          text: "Gilad is, objectively, extremely handsome. His toenails, however, have chosen a different editorial line.",
+        },
+        {
+          text: "This newspaper loves him entirely — including the tough nails that refuse to cooperate.",
+        },
+        {
+          text: "Beauty is not perfection. Sometimes it is a man who runs marathons and still loses to his own feet.",
+        },
       ],
     },
   ],
@@ -215,27 +279,33 @@ export const enEdition: Edition = {
       {
         text:
           "I wish you stay happy, joyful, healthy, loving and loved. That money never becomes an obstacle for you — and if it does, remember that is what family is for (and if you ever want us to be family, that requires a ring…).",
+        tmi: true,
       },
       {
         text:
           "May you succeed, my love — socially here in Israel, in the relationship that will only grow, God willing, and professionally, yielding returns and growing with work from the Netherlands and work from Israel. Giladi, I truly believe in you! You can do so much more than you believe. I see your progress every day and I am so happy for you.",
+        tmi: true,
       },
       {
         text:
           "I wish for us to stay together, to develop and advance on one united path, together and forever. That our love never fades, because only we know how strong it is.",
+        tmi: true,
       },
       {
         text:
           "I wish for you, Giladi, to remain such an amazing person — handsome in every sense of the word, charismatic, a true Renaissance man, someone wonderful to be around, kind, generous, happy in the joy of others, smart and with sophisticated humor — and most importantly, a real, modest man. That is part of your beauty that makes you even more handsome and more successful.",
+        tmi: true,
       },
       {
         text:
           "My Giladi, you are the gift of my life, the point of light I did not know I needed. I wish you only good, and I am sure that with the right motivation and wise decisions you will go far.",
+        tmi: true,
       },
       {
         text:
           "I am always here for you. And remember: you are closer to 30 than to 20. Mazel tov!",
         emphasis: "highlight",
+        tmi: true,
       },
     ],
     signoff: "Yours always, forever — Nivi / Niv Lil",
@@ -281,5 +351,18 @@ export const enEdition: Edition = {
     specialInsert: "Special Insert",
     blessingHeadline: "Birthday Blessing",
     languageEdition: "Edition Language",
+    tmiVersion: "TMI VERSION",
+    tmiUnlock: "TMI",
+    tmiLocked: "Classified filing",
+    tmiOn: "TMI ON",
+    tmiLock: "Lock",
+    tmiPasswordKicker: "Classified Desk",
+    tmiPasswordHeadline: "TMI Edition",
+    tmiPasswordDek: "Enter clearance code to unlock classified sections on this device.",
+    tmiPasswordPlaceholder: "Clearance code",
+    tmiPasswordSubmit: "Unlock filing",
+    tmiPasswordWrong: "Filing rejected. Clearance denied.",
+    tmiPasswordSuccess: "Clearance granted.",
+    tmiPasswordClose: "Close",
   },
 };

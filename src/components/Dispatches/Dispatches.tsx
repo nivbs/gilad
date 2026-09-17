@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { DispatchGagStrip } from "@/components/DispatchGag/DispatchGagStrip";
 import { NewspaperButton } from "@/components/NewspaperButton/NewspaperButton";
 import { PhotoSlider } from "@/components/PhotoSlider/PhotoSlider";
+import { TmiGate } from "@/components/Tmi/TmiGate";
 import type { Dispatch, UiStrings } from "@/content/types";
 
 type DispatchesProps = {
@@ -95,7 +96,32 @@ function DispatchItem({
                 />
               )}
               <p className="order-2 min-w-0 flex-1 text-base leading-relaxed text-ink md:order-1">
-                {dispatch.body}
+                {dispatch.body.map((segment, segmentIndex) => {
+                  const segmentKey = `${dispatch.id}-segment-${segmentIndex}`;
+                  const prefix = segmentIndex > 0 ? " " : "";
+
+                  if (segment.tmi) {
+                    return (
+                      <TmiGate
+                        key={segmentKey}
+                        variant="inline"
+                        label={ui.tmiVersion}
+                        lockedLabel={ui.tmiLocked}
+                        className="tmi-gate--inline-segment"
+                      >
+                        {prefix}
+                        {segment.text}
+                      </TmiGate>
+                    );
+                  }
+
+                  return (
+                    <span key={segmentKey}>
+                      {prefix}
+                      {segment.text}
+                    </span>
+                  );
+                })}
               </p>
             </div>
             {dispatch.photos && dispatch.photos.length > 0 && (

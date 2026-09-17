@@ -3,6 +3,8 @@
 import Image from "next/image";
 
 import type { PhotoFrameVariant } from "@/components/PhotoSlider/types";
+import { TmiGate } from "@/components/Tmi/TmiGate";
+import { useTmi } from "@/components/Tmi/TmiProvider";
 import type { LifePhoto } from "@/content/types";
 
 type PhotoFrameProps = {
@@ -25,6 +27,7 @@ const sizeHints: Record<PhotoFrameVariant, string> = {
 };
 
 export function PhotoFrame({ photo, variant }: PhotoFrameProps) {
+  const { tmiVersion, tmiLocked } = useTmi();
   const aspectClass = aspectClasses[variant];
   const wellClass =
     variant === "default"
@@ -43,7 +46,7 @@ export function PhotoFrame({ photo, variant }: PhotoFrameProps) {
     );
   }
 
-  return (
+  const frame = (
     <div className={`photo-well ${wellClass} relative ${aspectClass} overflow-hidden`}>
       <Image
         src={photo.src}
@@ -54,5 +57,15 @@ export function PhotoFrame({ photo, variant }: PhotoFrameProps) {
         draggable={false}
       />
     </div>
+  );
+
+  if (!photo.tmi) {
+    return frame;
+  }
+
+  return (
+    <TmiGate variant="media" label={tmiVersion} lockedLabel={tmiLocked}>
+      {frame}
+    </TmiGate>
   );
 }

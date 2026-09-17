@@ -5,6 +5,7 @@ type PhotoEntry = {
   src: string;
   alt: string;
   location?: string;
+  tmi?: boolean;
 };
 
 function buildCaption({ location }: PhotoEntry): string {
@@ -17,6 +18,7 @@ function toLifePhoto(entry: PhotoEntry): LifePhoto {
     src: entry.src,
     alt: entry.alt,
     caption: buildCaption(entry),
+    tmi: entry.tmi,
   };
 }
 
@@ -40,7 +42,7 @@ const catalog: PhotoEntry[] = [
   { id: "love-home-05", src: "/love-timeline/home/05.jpg", alt: "Gilad and Niv living together in Tel Aviv", location: "Tel Aviv" },
   { id: "love-home-06", src: "/love-timeline/home/06.jpg", alt: "Gilad and Niv at Ben Gurion 50 apartment", location: "Tel Aviv" },
   { id: "love-closet-01", src: "/love-timeline/closet/01.jpg", alt: "Gilad and Niv after coming out", location: "Tel Aviv" },
-  { id: "love-closet-02", src: "/love-timeline/closet/02.jpg", alt: "Gilad and Niv celebrating coming out of the closet", location: "Tel Aviv" },
+  { id: "love-closet-02", src: "/love-timeline/closet/02.jpg", alt: "Gilad and Niv celebrating coming out of the closet", location: "Tel Aviv", tmi: true },
   { id: "love-closet-03", src: "/love-timeline/closet/03.jpg", alt: "Gilad and Niv together after going public", location: "Tel Aviv" },
   { id: "love-rome-01", src: "/love-timeline/rome/01.jpg", alt: "Gilad and Niv in Rome", location: "Rome" },
   { id: "love-rome-02", src: "/love-timeline/rome/02.jpg", alt: "Gilad and Niv exploring Rome", location: "Rome" },
