@@ -1,3 +1,4 @@
+import { nlLifeTimeline } from "../lifeTimeline/nl";
 import type { Edition } from "../types";
 
 export const nlEdition: Edition = {
@@ -21,8 +22,9 @@ export const nlEdition: Edition = {
       "Meer dan anderhalf jaar bouwden ze een leven in het geheim: beste vrienden voor de wereld, partners in waarheid. Barcelona werd uitgevonden. Families kregen zorgvuldig bewerkte versies. Vrienden kregen een dekmantelverhaal netjes genoeg voor de pers.",
       "Op 12 juni 2026 ging het verhaal publiek. De kastdeur ging open. De liefde veranderde niet — alleen de kop.",
     ],
-    photoCaption: "Fig. 1 — Pinocchiostraat, Tel Aviv, 6 februari 2025",
+    photoCaption: "Fig. 1 — Hoofdfoto volgt in Editie II",
   },
+  lifeTimeline: nlLifeTimeline,
   dispatches: [
     {
       id: "dispatch-feb-6-2025",
@@ -229,7 +231,7 @@ export const nlEdition: Edition = {
       "Gedrukt op Ben Gurion 50, Tel Aviv",
       "Samen meer dan anderhalf jaar",
       "Editie van één — voor Gilad, van Niv",
-      "Foto's in de volgende editie",
+      "Archieffoto's: Editie I",
     ],
   },
   ui: {
@@ -237,7 +239,12 @@ export const nlEdition: Edition = {
     skip: "Overslaan",
     specialEditionAwaits: "Een speciale editie wacht",
     leadStory: "Hoofdartikel",
-    continueToTimeline: "Ga naar de tijdlijn →",
+    continueToTimeline: "Ga naar de levenskroniek →",
+    lifeChronicle: "Levenskroniek",
+    lifeChronicleSubtitle: "Archief",
+    continueToLoveStory: "Ga naar het liefdesverhaal →",
+    photoDesk: "Fotoredactie",
+    yearsOnRecord: "Jaren in archief",
     dispatches: "Berichten",
     fieldReports: "Veldberichten",
     index: "Index",

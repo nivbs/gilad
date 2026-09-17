@@ -33,6 +33,22 @@ export type Dispatch = {
   gags?: DispatchGag[];
 };
 
+export type LifePhoto = {
+  id: string;
+  src: string;
+  alt: string;
+  caption: string;
+  placeholder?: boolean;
+};
+
+export type LifeYearChapter = {
+  id: string;
+  year: number;
+  kicker?: string;
+  headline: string;
+  photos: LifePhoto[];
+};
+
 export type Nickname = {
   name: string;
   note?: string;
@@ -56,6 +72,11 @@ export type UiStrings = {
   specialEditionAwaits: string;
   leadStory: string;
   continueToTimeline: string;
+  lifeChronicle: string;
+  lifeChronicleSubtitle: string;
+  continueToLoveStory: string;
+  photoDesk: string;
+  yearsOnRecord: string;
   dispatches: string;
   fieldReports: string;
   index: string;
@@ -94,6 +115,12 @@ export type Edition = {
     lede: string;
     body: string[];
     photoCaption: string;
+  };
+  lifeTimeline: {
+    kicker: string;
+    headline: string;
+    dek: string;
+    chapters: LifeYearChapter[];
   };
   dispatches: Dispatch[];
   sidebarColumns: SidebarColumn[];

@@ -1,3 +1,4 @@
+import { heLifeTimeline } from "../lifeTimeline/he";
 import type { Edition } from "../types";
 
 export const heEdition: Edition = {
@@ -21,8 +22,9 @@ export const heEdition: Edition = {
       "יותר משנה וחצי הם בנו חיים בסתר: חברים הכי טובים לעולם, בני זוג באמת. ברצלונה הומצאה. למשפחות סופרו גרסאות מעודנות. לחברים ניתן סיפור כיסוי מלוטש מספיק לדפוס.",
       "ב-12 ביוני 2026, הסיפור יצא לפומבי. דלת הארון נפתחה. האהבה לא השתנתה — רק הכותרת.",
     ],
-    photoCaption: "איור 1 — רחוב פינוקיו, תל אביב, 6 בפברואר 2025",
+    photoCaption: "איור 1 — תצלום ראשי במהדורה הבאה",
   },
+  lifeTimeline: heLifeTimeline,
   dispatches: [
     {
       id: "dispatch-feb-6-2025",
@@ -228,7 +230,7 @@ export const heEdition: Edition = {
       "הודפס בבן גוריון 50, תל אביב",
       "ביחד יותר משנה וחצי",
       "מהדורה של אחד — לגלעד, מניב",
-      "תמונות במהדורה הבאה",
+      "תמונות ארכיון: מהדורה א׳",
     ],
   },
   ui: {
@@ -236,7 +238,12 @@ export const heEdition: Edition = {
     skip: "דלג",
     specialEditionAwaits: "מהדורה מיוחדת מחכה",
     leadStory: "כתבה ראשית",
-    continueToTimeline: "המשך לציר הזמן →",
+    continueToTimeline: "המשך לכרוניקת החיים →",
+    lifeChronicle: "כרוניקת החיים",
+    lifeChronicleSubtitle: "ארכיון",
+    continueToLoveStory: "המשך לסיפור האהבה →",
+    photoDesk: "מדור צילום",
+    yearsOnRecord: "שנים בארכיון",
     dispatches: "דיווחים",
     fieldReports: "דיווחי שטח",
     index: "מפתח",

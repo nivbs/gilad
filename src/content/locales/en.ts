@@ -1,3 +1,4 @@
+import { enLifeTimeline } from "../lifeTimeline/en";
 import type { Edition } from "../types";
 
 export const enEdition: Edition = {
@@ -21,8 +22,9 @@ export const enEdition: Edition = {
       "For more than a year and a half, they built a life in secret: best friends to the world, partners in truth. Barcelona was invented. Families were told carefully edited versions. Friends received a cover story polished enough for print.",
       "On June 12, 2026, the story went public. The closet door opened. The love did not change — only the headline did.",
     ],
-    photoCaption: "Fig. 1 — Pinocchio Street, Tel Aviv, 6 February 2025",
+    photoCaption: "Fig. 1 — Lead photograph forthcoming in Issue II",
   },
+  lifeTimeline: enLifeTimeline,
   dispatches: [
     {
       id: "dispatch-feb-6-2025",
@@ -224,7 +226,7 @@ export const enEdition: Edition = {
       "Printed at Ben Gurion 50, Tel Aviv",
       "Together for more than a year and a half",
       "Edition of one — for Gilad, from Niv",
-      "Photographs forthcoming in the next issue",
+      "Archive photographs: Issue I",
     ],
   },
   ui: {
@@ -232,7 +234,12 @@ export const enEdition: Edition = {
     skip: "Skip",
     specialEditionAwaits: "A special edition awaits",
     leadStory: "Lead Story",
-    continueToTimeline: "Continue to the timeline →",
+    continueToTimeline: "Continue to the life chronicle →",
+    lifeChronicle: "Life Chronicle",
+    lifeChronicleSubtitle: "Archive",
+    continueToLoveStory: "Continue to the love story →",
+    photoDesk: "Photo Desk",
+    yearsOnRecord: "Years on record",
     dispatches: "Dispatches",
     fieldReports: "Field Reports",
     index: "Index",

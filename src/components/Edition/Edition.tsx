@@ -10,6 +10,7 @@ import { Dispatches } from "@/components/Dispatches/Dispatches";
 import { EditorLetter } from "@/components/EditorLetter/EditorLetter";
 import { LanguageBar } from "@/components/LanguageBar/LanguageBar";
 import { LeadStory } from "@/components/LeadStory/LeadStory";
+import { LifeTimeline } from "@/components/LifeTimeline/LifeTimeline";
 import { Masthead } from "@/components/Masthead/Masthead";
 import { PaperIntro } from "@/components/PaperIntro/PaperIntro";
 import { SidebarGrid } from "@/components/SidebarGrid/SidebarGrid";
@@ -29,7 +30,14 @@ export function Edition() {
     defaultExpandedId: "dispatch-feb-6-2025",
   });
 
-  const scrollToDispatches = () => {
+  const scrollToLifeTimeline = () => {
+    document.getElementById("life-timeline")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
+  const scrollToLoveStory = () => {
     document.getElementById("dispatches")?.scrollIntoView({
       behavior: "smooth",
       block: "start",
@@ -135,12 +143,27 @@ export function Edition() {
                 leadStory={edition.leadStory}
                 ui={edition.ui}
                 isRtl={isRtl}
-                onContinue={scrollToDispatches}
+                onContinue={scrollToLifeTimeline}
               />
             </motion.div>
 
             <motion.div
               custom={2}
+              initial={prefersReducedMotion ? undefined : "hidden"}
+              animate={prefersReducedMotion ? undefined : "visible"}
+              variants={prefersReducedMotion ? undefined : sectionVariants}
+            >
+              <LifeTimeline
+                lifeTimeline={edition.lifeTimeline}
+                ui={edition.ui}
+                isRtl={isRtl}
+                prefersReducedMotion={prefersReducedMotion}
+                onContinueToLoveStory={scrollToLoveStory}
+              />
+            </motion.div>
+
+            <motion.div
+              custom={3}
               initial={prefersReducedMotion ? undefined : "hidden"}
               animate={prefersReducedMotion ? undefined : "visible"}
               variants={prefersReducedMotion ? undefined : sectionVariants}
@@ -170,7 +193,7 @@ export function Edition() {
             </motion.div>
 
             <motion.div
-              custom={3}
+              custom={4}
               initial={prefersReducedMotion ? undefined : "hidden"}
               animate={prefersReducedMotion ? undefined : "visible"}
               variants={prefersReducedMotion ? undefined : sectionVariants}
@@ -185,7 +208,7 @@ export function Edition() {
             </motion.div>
 
             <motion.div
-              custom={4}
+              custom={5}
               initial={prefersReducedMotion ? undefined : "hidden"}
               animate={prefersReducedMotion ? undefined : "visible"}
               variants={prefersReducedMotion ? undefined : sectionVariants}
@@ -200,7 +223,7 @@ export function Edition() {
             </motion.div>
 
             <motion.div
-              custom={5}
+              custom={6}
               initial={prefersReducedMotion ? undefined : "hidden"}
               animate={prefersReducedMotion ? undefined : "visible"}
               variants={prefersReducedMotion ? undefined : sectionVariants}
@@ -214,7 +237,7 @@ export function Edition() {
             </motion.div>
 
             <motion.div
-              custom={6}
+              custom={7}
               initial={prefersReducedMotion ? undefined : "hidden"}
               animate={prefersReducedMotion ? undefined : "visible"}
               variants={prefersReducedMotion ? undefined : sectionVariants}

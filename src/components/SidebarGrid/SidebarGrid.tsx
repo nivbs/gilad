@@ -20,14 +20,20 @@ function NicknameGlossary({
   isRtl: boolean;
 }) {
   return (
-    <aside className={`border newspaper-rule p-4 ${isRtl ? "font-hebrew text-right" : ""}`}>
+    <aside
+      className={`sidebar-card border newspaper-rule p-6 md:col-span-2 ${
+        isRtl ? "font-hebrew text-right" : ""
+      }`}
+    >
       <p className="kicker mb-3 inline-block px-2 py-0.5 text-[10px] font-semibold">
         {ui.glossary}
       </p>
-      <h3 className="font-display text-lg font-bold text-ink">{ui.approvedNicknames}</h3>
-      <ul className="mt-3 space-y-2">
+      <h3 className="font-display text-xl font-bold text-ink md:text-2xl">
+        {ui.approvedNicknames}
+      </h3>
+      <ul className="mt-4 grid gap-2 sm:grid-cols-2">
         {nicknames.map((nickname) => (
-          <li key={nickname.name} className="text-sm leading-relaxed">
+          <li key={nickname.name} className="text-sm leading-relaxed md:text-base">
             <span className="font-semibold">{nickname.name}</span>
             {nickname.note && (
               <span className="text-ink-muted"> — {nickname.note}</span>
@@ -35,10 +41,12 @@ function NicknameGlossary({
           </li>
         ))}
       </ul>
-      <h4 className="mt-5 font-display text-base font-bold text-ink">{ui.hebrewEdition}</h4>
-      <ul className="mt-2 space-y-3">
+      <h4 className="mt-6 font-display text-lg font-bold text-ink md:text-xl">
+        {ui.hebrewEdition}
+      </h4>
+      <ul className="mt-3 grid gap-3 sm:grid-cols-2">
         {hebrewNicknames.map((item) => (
-          <li key={item.hebrew} className="text-sm leading-relaxed">
+          <li key={item.hebrew} className="text-sm leading-relaxed md:text-base">
             <span className="font-hebrew text-base">{item.hebrew}</span>
             <span className="block text-ink-muted">{item.transliteration}</span>
             {item.note && (
@@ -59,18 +67,22 @@ function SidebarColumnCard({
   isRtl: boolean;
 }) {
   return (
-    <aside className={`border newspaper-rule p-4 ${isRtl ? "font-hebrew text-right" : ""}`}>
+    <aside
+      className={`sidebar-card border newspaper-rule p-6 ${isRtl ? "font-hebrew text-right" : ""}`}
+    >
       {column.kicker && (
         <p className="kicker mb-3 inline-block px-2 py-0.5 text-[10px] font-semibold">
           {column.kicker}
         </p>
       )}
-      <h3 className="font-display text-lg font-bold text-ink">{column.title}</h3>
-      <ul className="mt-3 space-y-2">
+      <h3 className="font-display text-xl font-bold text-ink md:text-2xl">
+        {column.title}
+      </h3>
+      <ul className="mt-4 space-y-3">
         {column.items.map((item) => (
           <li
             key={item.slice(0, 50)}
-            className={`text-sm leading-relaxed text-ink ${
+            className={`text-sm leading-relaxed text-ink md:text-base ${
               isRtl ? "before:ml-2 before:content-['—']" : "before:mr-2 before:content-['—']"
             }`}
           >
@@ -90,16 +102,16 @@ export function SidebarGrid({
   isRtl,
 }: SidebarGridProps) {
   return (
-    <section className="section-divider border-b newspaper-rule py-8">
-      <div className="mb-6 flex items-baseline justify-between border-b newspaper-rule pb-2">
-        <h2 className="font-display text-2xl font-bold uppercase tracking-wide text-ink">
+    <section className="sidebar-spread section-divider border-b newspaper-rule py-10">
+      <div className="mb-8 flex items-baseline justify-between border-b newspaper-rule pb-3">
+        <h2 className="font-display text-3xl font-bold uppercase tracking-wide text-ink">
           {ui.sidebar}
         </h2>
         <span className="text-xs uppercase tracking-widest text-ink-muted">
           {ui.supplementaryReporting}
         </span>
       </div>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2">
         <NicknameGlossary
           nicknames={nicknames}
           hebrewNicknames={hebrewNicknames}

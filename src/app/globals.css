@@ -201,6 +201,36 @@ body {
     0 0 12px rgba(186, 159, 228, 0.35);
 }
 
+.life-photo-well {
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 rgba(26, 26, 26, 0.12);
+}
+
+.life-year-chapter {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-spread {
+  background: rgba(255, 255, 255, 0.28);
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .sidebar-spread {
+    margin-left: -2rem;
+    margin-right: -2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.sidebar-card {
+  background: rgba(255, 255, 255, 0.35);
+}
+
 .paper-grain {
   background-image:
     radial-gradient(rgba(26, 26, 26, 0.03) 1px, transparent 1px),
