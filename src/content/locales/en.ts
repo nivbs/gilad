@@ -22,7 +22,10 @@ export const enEdition: Edition = {
       "For more than a year and a half, they built a life in secret: best friends to the world, partners in truth. Barcelona was invented. Families were told carefully edited versions. Friends received a cover story polished enough for print.",
       "On June 12, 2026, the story went public. The closet door opened. The love did not change — only the headline did.",
     ],
-    photoCaption: "Fig. 1 — Lead photograph forthcoming in Issue II",
+    photoSrc: "/lead-story/birthday-hat.jpg",
+    photoAlt: "Gilad wearing a pink birthday hat at Niv's mother's birthday",
+    photoCaption:
+      "January 2026. Gilad attends Niv's mother's birthday and is photographed in the hat. The defense has no comment.",
   },
   lifeTimeline: enLifeTimeline,
   dispatches: [

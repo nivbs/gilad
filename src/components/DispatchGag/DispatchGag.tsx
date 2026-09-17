@@ -64,9 +64,6 @@ export function DispatchGag({ gag, isRtl, prefersReducedMotion }: DispatchGagPro
       <div className="dispatch-gag-icon relative h-16 w-16 md:h-24 md:w-24">
         <Image src={config.icon} alt="" fill className="object-contain drop-shadow-md" />
       </div>
-      <p className="dispatch-gag-caption mt-1 text-center text-[9px] uppercase tracking-widest text-ink-muted">
-        {config.caption}
-      </p>
     </motion.div>
   );
 }

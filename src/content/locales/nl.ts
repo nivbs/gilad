@@ -22,7 +22,10 @@ export const nlEdition: Edition = {
       "Meer dan anderhalf jaar bouwden ze een leven in het geheim: beste vrienden voor de wereld, partners in waarheid. Barcelona werd uitgevonden. Families kregen zorgvuldig bewerkte versies. Vrienden kregen een dekmantelverhaal netjes genoeg voor de pers.",
       "Op 12 juni 2026 ging het verhaal publiek. De kastdeur ging open. De liefde veranderde niet — alleen de kop.",
     ],
-    photoCaption: "Fig. 1 — Hoofdfoto volgt in Editie II",
+    photoSrc: "/lead-story/birthday-hat.jpg",
+    photoAlt: "Gilad met een roze verjaardagshoed op de verjaardag van Nivs moeder",
+    photoCaption:
+      "Januari 2026. Gilad woont de verjaardag van Nivs moeder bij en wordt gefotografeerd met de hoed. De verdediging wenst geen commentaar.",
   },
   lifeTimeline: nlLifeTimeline,
   dispatches: [

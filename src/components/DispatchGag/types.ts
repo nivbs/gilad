@@ -13,7 +13,6 @@ export type GagAnimationConfig = {
 
 export type GagConfig = {
   icon: string;
-  caption: string;
 };
 
 export type DispatchGagStripProps = {

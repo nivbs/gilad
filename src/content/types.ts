@@ -117,6 +117,8 @@ export type Edition = {
     byline: string;
     lede: string;
     body: string[];
+    photoSrc: string;
+    photoAlt: string;
     photoCaption: string;
   };
   lifeTimeline: {

@@ -143,6 +143,7 @@ export function Edition() {
                 leadStory={edition.leadStory}
                 ui={edition.ui}
                 isRtl={isRtl}
+                prefersReducedMotion={prefersReducedMotion}
                 onContinue={scrollToLifeTimeline}
               />
             </motion.div>

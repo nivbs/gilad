@@ -1,5 +1,6 @@
 "use client";
 
+import { LeadStoryPhoto } from "@/components/LeadStory/LeadStoryPhoto";
 import { NewspaperButton } from "@/components/NewspaperButton/NewspaperButton";
 import type { Edition, UiStrings } from "@/content/types";
 
@@ -7,10 +8,17 @@ type LeadStoryProps = {
   leadStory: Edition["leadStory"];
   ui: UiStrings;
   isRtl: boolean;
+  prefersReducedMotion: boolean;
   onContinue: () => void;
 };
 
-export function LeadStory({ leadStory, ui, isRtl, onContinue }: LeadStoryProps) {
+export function LeadStory({
+  leadStory,
+  ui,
+  isRtl,
+  prefersReducedMotion,
+  onContinue,
+}: LeadStoryProps) {
   return (
     <article className="section-divider border-b newspaper-rule py-8">
       <div className="mb-4 flex flex-wrap items-center gap-2">
@@ -49,11 +57,13 @@ export function LeadStory({ leadStory, ui, isRtl, onContinue }: LeadStoryProps) 
           ))}
         </div>
         <aside className="lg:col-span-4">
-          <div className="photo-well flex aspect-[4/5] items-end p-4">
-            <p className="text-xs uppercase tracking-wider text-ink-muted">
-              {leadStory.photoCaption}
-            </p>
-          </div>
+          <LeadStoryPhoto
+            photoSrc={leadStory.photoSrc}
+            photoAlt={leadStory.photoAlt}
+            photoCaption={leadStory.photoCaption}
+            isRtl={isRtl}
+            prefersReducedMotion={prefersReducedMotion}
+          />
         </aside>
       </div>
       <div className="mt-8 flex justify-center">
