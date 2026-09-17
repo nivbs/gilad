@@ -206,6 +206,29 @@ body {
   box-shadow: 3px 3px 0 rgba(26, 26, 26, 0.12);
 }
 
+.life-photo-well--compact {
+  box-shadow: 2px 2px 0 rgba(26, 26, 26, 0.1);
+}
+
+.life-photo-slider-viewport {
+  touch-action: pan-y;
+}
+
+.life-photo-slider-track {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.life-photo-slider-dot {
+  padding: 0;
+  line-height: 0;
+}
+
+.life-photo-slider-nav {
+  min-width: 1.75rem;
+  justify-content: center;
+}
+
 .life-year-chapter {
   background: rgba(255, 255, 255, 0.2);
 }

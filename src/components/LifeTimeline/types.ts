@@ -1,5 +1,7 @@
 import type { LifePhoto, LifeYearChapter, UiStrings } from "@/content/types";
 
+export type LifePhotoVariant = "default" | "compact";
+
 export type LifeTimelineContent = {
   kicker: string;
   headline: string;
@@ -15,7 +17,13 @@ export type LifeTimelineSharedProps = {
 
 export type LifePhotoCardProps = LifeTimelineSharedProps & {
   photo: LifePhoto;
-  index: number;
+  index?: number;
+  variant?: LifePhotoVariant;
+};
+
+export type LifePhotoSliderProps = LifeTimelineSharedProps & {
+  photos: LifePhoto[];
+  chapterYear: number;
 };
 
 export type LifeYearChapterProps = LifeTimelineSharedProps & {

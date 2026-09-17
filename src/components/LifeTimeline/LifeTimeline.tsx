@@ -55,7 +55,7 @@ export function LifeTimeline({
           prefersReducedMotion={prefersReducedMotion}
           onSelect={scrollToChapter}
         />
-        <div className="min-w-0 flex-1 space-y-6">
+        <div className="min-w-0 flex-1 space-y-4">
           {lifeTimeline.chapters.map((chapter) => (
             <LifeYearChapter
               key={chapter.id}
