@@ -6,9 +6,9 @@ export const nlEdition: Edition = {
     title: "De Gilad Krant",
     subtitle: "The Gilad Times",
     tagline: "Speciale Editie — Voor één lezer alleen",
-    volume: "Dl. 25 — Verjaardagseditie",
+    volume: "Jrg. 25 — Verjaardagseditie",
     printedIn: "Gedrukt in Tel Aviv & Rotterdam",
-    dateLine: "Gefeliciteerd, Gilad",
+    dateLine: "Van harte gefeliciteerd, Gilad",
   },
   leadStory: {
     kicker: "EXCLUSIEF",
@@ -16,7 +16,7 @@ export const nlEdition: Edition = {
       "Twee mannen ontmoeten elkaar op Pinocchiostraat; liefde overleeft de kast, de dekmantels en één elektrische step",
     byline: "Door Niv, hoofdredacteur van deze hele krant",
     lede:
-      "Op 6 februari 2025, in Tel Aviv, ontmoetten Gilad en Niv elkaar op Pinocchiostraat. Geen van beiden had ooit een relatie met een man gehad. Beiden zaten in de kast. Geen van beiden heeft sindsdien achterom gekeken.",
+      "Op 6 februari 2025, in Tel Aviv, ontmoetten Gilad en Niv elkaar op Pinocchiostraat. Geen van beiden had ooit een relatie met een man gehad. Beiden zaten in de kast. Sindsdien hebben ze niet meer omgekeken.",
     body: [
       "Wat volgde was geen slow-burn romance in de stijl van respectabele journalistiek. Het was direct, dagelijks, en een beetje illegaal in emotionele zin — het soort verhaal dat niet netjes in een kop past tot je het eindelijk mag vertellen.",
       "Meer dan anderhalf jaar bouwden ze een leven in het geheim: beste vrienden voor de wereld, partners in waarheid. Barcelona werd uitgevonden. Families kregen zorgvuldig bewerkte versies. Vrienden kregen een dekmantelverhaal netjes genoeg voor de pers.",
@@ -31,7 +31,7 @@ export const nlEdition: Edition = {
       date: "6 februari 2025",
       headline: "Eerste ontmoeting op Pinocchiostraat",
       body:
-        "Gilad en Niv ontmoetten elkaar in Tel Aviv en waren elke dag samen tot Gilad vertrok. Het begin van alles — onbewerkt, onaangekondigd, onvergetelijk.",
+        "Gilad en Niv ontmoetten elkaar in Tel Aviv en brachten elke dag samen door tot Gilad vertrok. Het begin van alles — onbewerkt, onaangekondigd, onvergetelijk.",
       kicker: "Tel Aviv",
       gags: ["grindr"],
     },
@@ -68,7 +68,7 @@ export const nlEdition: Edition = {
       date: "juni–augustus 2025",
       headline: "Geheime sublets in Tel Aviv",
       body:
-        "Ze woonden samen in een reeks sublets terwijl ze het verborgen voor beide families en vrienden. Voor de rest waren ze beste vrienden. Voor elkaar waren ze thuis.",
+        "Ze woonden samen in een reeks sublets terwijl ze dat verborgen hielden voor beide families en vrienden. Voor de buitenwereld waren ze beste vrienden. Voor elkaar waren ze thuis.",
       kicker: "Undercover",
       gags: ["key"],
     },
@@ -77,7 +77,7 @@ export const nlEdition: Edition = {
       date: "september 2025",
       headline: "Eerste bezoek aan Nederland — nog steeds \"alleen vrienden\"",
       body:
-        "Niv vloog naar Nederland om voor het eerst Gilads familie en vrienden te ontmoeten, officieel als zijn vriend. Ze rookten veel wiet, probeerden truffels voor psychoactieve avonturen, en hadden een onredelijk goede tijd.",
+        "Niv vloog naar Nederland om voor het eerst Gilads familie en vrienden te ontmoeten, officieel als gewoon een vriend. Ze rookten veel wiet, probeerden truffels voor psychoactieve avonturen, en hadden belachelijk veel pret.",
       kicker: "Buitenland",
       gags: ["weed"],
     },
@@ -114,7 +114,7 @@ export const nlEdition: Edition = {
       date: "Eind juni – begin juli 2026",
       headline: "Rome na de kast",
       body:
-        "Nadat Gilad zijn bachelor had afgerond en de verhuizing naar Israël officieel was, gingen ze naar Rome — en Napoli — om het uit de kast komen te vieren. Het dekmantelverhaal was voorbij. De liefde hield nooit op.",
+        "Nadat Gilad zijn bachelor had afgerond en de verhuizing naar Israël officieel was, gingen ze naar Rome — en Napels — om het uit de kast komen te vieren. Het dekmantelverhaal was voorbij. De liefde hield nooit op.",
       kicker: "Reizen",
       gags: ["airplane", "pride"],
     },
@@ -123,7 +123,7 @@ export const nlEdition: Edition = {
     kicker: "Correspondentie",
     headline: "Lange afstand",
     dek:
-      "Screenshots van de WhatsApp-videogesprekken die de jaren bij elkaar hielden.",
+      "Screenshots van de WhatsApp-videogesprekken die hen door de jaren heen bij elkaar hielden.",
     photos: [],
   },
   nicknames: [
@@ -133,7 +133,7 @@ export const nlEdition: Edition = {
     { name: "Gili Ben Shmuli" },
     { name: "Gili Ben Perzi" },
     { name: "Gil Bish" },
-    { name: "Shil Mil Chili", note: "De meest willekeurige. De meest juiste." },
+    { name: "Shil Mil Chili", note: "De meest random. De meest juiste." },
   ],
   hebrewNicknames: [
     { hebrew: "חיים טובים", transliteration: "Chaim Tovim" },
@@ -142,7 +142,7 @@ export const nlEdition: Edition = {
       hebrew: "חיים שלי",
       transliteration: "Chaim Sheli — Mijn leven",
       note:
-        "Gilad haat deze. Zijn Israëlische tante noemt iedereen חיים שלי, wat hem cringe geeft. Niv vindt het heerlijk. De krant kiest de kant van Niv.",
+        "Gilad haat deze. Zijn Israëlische tante noemt iedereen חיים שלי, waar hij cringe van wordt. Niv vindt het heerlijk. De krant kiest de kant van Niv.",
     },
   ],
   sidebarColumns: [
@@ -150,7 +150,7 @@ export const nlEdition: Edition = {
       title: "Sportredactie",
       kicker: "Feyenoord & linkse voetbal",
       items: [
-        "Primaire loyaliteit: Feyenoord Rotterdam. Niet te onderhandelen.",
+        "Primaire loyaliteit: Feyenoord Rotterdam. Niet onderhandelbaar.",
         "Als je een Israëlische club moet kiezen: Hapoel Tel Aviv — niet voor glorie, maar omdat ze links zijn en hij ook. Ideologie boven trofeeën.",
         "Doet ook mee aan: voetbal, tennis, hardlopen, voetbaltennis, volleybal, en alles met een bal en licht lijden.",
         "Extreem sportief. Extreem knap. De sportredactie kan de teennagelsituatie niet verklaren (zie hieronder).",
@@ -161,8 +161,8 @@ export const nlEdition: Edition = {
       kicker: "Een kleine maar serieuze verslaving",
       items: [
         "Het onderwerp houdt van chocolade met een toewijding die meestal voor breaking news is.",
-        "Na een joint kan de consumptie non-stop worden. Redacteuren hebben geen klacht ingediend.",
-        "Avondvoorkeur: vlees. Nivs voorkeur: geen vlees. Het huishouden blijft diplomatisch.",
+        "Na een joint kan hij non-stop blijven eten. Redacteuren hebben geen klacht ingediend.",
+        "'s Avonds: vlees. Nivs voorkeur: geen vlees. Het huishouden blijft diplomatisch.",
       ],
     },
     {
@@ -181,7 +181,7 @@ export const nlEdition: Edition = {
       { text: "Gilad —", emphasis: "opening" },
       {
         text:
-          "Je bent vandaag 25. Je bent journalist die een van de moeilijkste verhalen ter wereld dekt, en op de een of andere manier werd jij ook het beste verhaal van mijn leven.",
+          "Je bent vandaag 25. Je bent een journalist die een van de moeilijkste verhalen ter wereld dekt, en op de een of andere manier werd jij ook het beste verhaal van mijn leven.",
       },
       {
         text:
@@ -189,7 +189,7 @@ export const nlEdition: Edition = {
       },
       {
         text:
-          "Ik maakte deze krant voor jou omdat je de kop verdient. Niet de voetnoot. Niet het dekmantelverhaal dat we voor anderen verzonen. De echte.",
+          "Ik maakte deze krant voor jou omdat je de kop verdient. Niet de voetnoot. Niet het dekmantelverhaal dat we voor anderen verzonen. Het echte.",
       },
       {
         text:
@@ -203,44 +203,44 @@ export const nlEdition: Edition = {
   blessing: {
     kicker: "Speciale bijlage",
     openingLine:
-      "Giladi, Gili, Gili Bili Shmili, liefde van mijn hart, liefde van mijn leven, mijn leven — gefeliciteerd!",
+      "Giladi, Gili, Gili Bili Shmili, geliefde van mijn hart, liefde van mijn leven, חיים שלי — van harte gefeliciteerd!",
     paragraphs: [
       {
         text:
-          "Wat kan ik wensen voor een man die al de beste partner ter wereld heeft gewonnen?",
+          "Wat kan ik toewensen aan een man die de beste partner ter wereld al heeft gewonnen?",
         emphasis: "opening",
       },
       {
         text:
-          "Ik wens je dat het leven je alleen met positief licht zal verlichten. Ik wens je dat je gelukkig, vrolijk, gezond, liefend en geliefd blijft.",
+          "Ik wens je toe dat het leven je alleen met positief licht zal beschijnen. Ik wens je toe dat je gelukkig, vrolijk, gezond, liefhebbend en geliefd blijft.",
       },
       {
         text:
-          "Dat geld nooit een obstakel voor je wordt — en als het dat wel is, onthoud dat daar familie voor is (en als we ooit familie worden, is er een ring nodig…).",
+          "Dat geld nooit een obstakel voor je wordt — en mocht dat wél zo zijn, onthoud dat daar familie voor is (en als jij ooit wilt dat we familie worden, dan is er een ring nodig…).",
       },
       {
         text:
-          "Dat je slaagt, mijn lief — sociaal hier in Israël, in de relatie die alleen zal groeien, met Gods hulp, en professioneel, rendement opleverend en groeiend met werk uit Nederland en werk uit Israël. Giladi, ik geloof echt in je! Je kunt veel meer dan je denkt. Ik zie je vooruitgang elke dag en ik ben zo blij voor je.",
+          "Dat je slaagt, mijn lief — sociaal hier in Israël, in de relatie die alleen maar zal groeien, met Gods hulp, en professioneel, zodat je werk rendement oplevert en groeit, met werk uit Nederland en werk uit Israël. Giladi, ik geloof echt in je! Je kunt veel meer dan je zelf gelooft. Ik zie je vooruitgang elke dag en ik ben zo blij voor je.",
       },
       {
         text:
-          "Ik wens ons dat we bij elkaar blijven, ontwikkelen en vooruitgaan op één verenigde weg, samen en voor altijd. Dat onze liefde nooit dooft, want alleen wij weten hoe sterk ze is.",
+          "Ik wens óns toe dat we bij elkaar blijven, ons ontwikkelen en vooruitgaan op één gezamenlijk pad, samen en voor altijd. Dat onze liefde nooit dooft, want alleen wij weten hoe sterk ze is.",
       },
       {
         text:
-          "Ik wens je, Giladi, dat je zo'n geweldig mens blijft — knap in elke zin van het woord, charismatisch, een echte homo universalis, iemand met wie het fijn is om te zijn, vriendelijk, gul, blij in het geluk van anderen, slim en met verfijnde humor — en het belangrijkst: een echte, bescheiden man. Dat is deel van je schoonheid die je nog knapper en succesvoller maakt.",
+          "Ik wens je toe, Giladi, dat je zo'n geweldig mens blijft — knap in elke zin van het woord, charismatisch, een echte renaissancemens, iemand bij wie het fijn is om te zijn, vriendelijk, gul, oprecht blij met het geluk van anderen, slim en met een verfijnd gevoel voor humor — en het belangrijkst: een echte, bescheiden man. Dat is een deel van jouw schoonheid, waardoor je nóg knapper en succesvoller bent.",
       },
       {
         text:
-          "Mijn Giladi, je bent het cadeau van mijn leven, het lichtpunt dat ik niet wist dat ik nodig had. Ik wens je alleen het goede, en ik ben er zeker van dat je met de juiste motivatie en verstandige beslissingen ver komt.",
+          "Mijn Giladi, je bent het cadeau van mijn leven, het lichtpunt waarvan ik niet wist dat ik het nodig had. Ik wens je alleen het goede toe, en ik weet zeker dat je met de juiste motivatie en verstandige beslissingen ver komt.",
       },
       {
         text:
-          "Ik ben er altijd voor je — in je jubeljaar, wanneer het goede je tegemoet komt. En onthoud: je bent dichter bij 30 dan bij 20. Mazel tov!",
+          "Ik ben er altijd voor je — ook in het jubeljaar dat je ten goede mag komen. En onthoud: je bent dichter bij de 30 dan bij de 20. Mazel tov!",
         emphasis: "highlight",
       },
     ],
-    signoff: "Altijd van jou, voor altijd — Nivi / Niv Lil",
+    signoff: "Altijd de jouwe, voor eeuwig — Nivi / Niv Lil",
   },
   colophon: {
     lines: [
@@ -253,14 +253,14 @@ export const nlEdition: Edition = {
   ui: {
     openEdition: "Open de editie",
     skip: "Overslaan",
-    specialEditionAwaits: "Een speciale editie wacht",
+    specialEditionAwaits: "Een speciale editie staat klaar",
     leadStory: "Hoofdartikel",
     continueToTimeline: "Ga naar de levenskroniek →",
     lifeChronicle: "Levenskroniek",
     lifeChronicleSubtitle: "Archief",
     continueToLoveStory: "Ga naar het liefdesverhaal →",
     photoDesk: "Fotoredactie",
-    yearsOnRecord: "Jaren in archief",
+    yearsOnRecord: "Jaren in het archief",
     dispatches: "Berichten",
     fieldReports: "Veldberichten",
     index: "Index",
@@ -270,8 +270,8 @@ export const nlEdition: Edition = {
     previousDispatch: "Vorig bericht",
     nextDispatch: "Volgend bericht",
     letterFromEditor: "Brief van de redacteur →",
-    backToIndex: "Terug naar index",
-    backToLetter: "Terug naar brief ↑",
+    backToIndex: "Terug naar de index",
+    backToLetter: "Terug naar de brief ↑",
     sidebar: "Rubrieken",
     supplementaryReporting: "Aanvullende berichtgeving",
     correspondenceDesk: "Correspondentie",
@@ -281,7 +281,7 @@ export const nlEdition: Edition = {
     hebrewEdition: "Hebreeuwse editie",
     opEd: "Opinie",
     specialInsert: "Speciale bijlage",
-    blessingHeadline: "Verjaardagswens",
+    blessingHeadline: "Beracha voor je verjaardag",
     languageEdition: "Editietaal",
   },
 };
