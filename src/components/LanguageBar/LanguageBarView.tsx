@@ -1,15 +1,10 @@
 "use client";
 
-import { LanguageFlagButton } from "@/components/LanguageBar/LanguageFlagButton";
-import { TmiToggle } from "@/components/LanguageBar/TmiToggle";
-import type { LanguageBarViewProps, LanguageOption } from "@/components/LanguageBar/types";
-import { SoundtrackToggle } from "@/components/SoundtrackToggle/SoundtrackToggle";
+import { EditionTools } from "@/components/LanguageBar/EditionTools";
+import { LanguageSwitcher } from "@/components/LanguageBar/LanguageSwitcher";
+import type { LanguageBarViewProps } from "@/components/LanguageBar/types";
 
-const languages: LanguageOption[] = [
-  { locale: "he", flag: "/flags/il.svg", label: "Hebrew", code: "עב" },
-  { locale: "en", flag: "/flags/us.svg", label: "English", code: "EN" },
-  { locale: "nl", flag: "/flags/nl.svg", label: "Dutch", code: "NL" },
-];
+const EDITION_LANGUAGE_LABEL_ID = "edition-language-label";
 
 export function LanguageBarView({
   locale,
@@ -25,31 +20,24 @@ export function LanguageBarView({
   return (
     <div className="language-bar sticky top-0 z-20 -mx-4 border-b-2 border-double border-ink bg-newsprint px-3 py-3 sm:px-4 md:-mx-8 md:px-8">
       <div className="language-bar-inner">
-        <p className="text-[10px] uppercase tracking-[0.2em] text-ink-muted">
-          {editionLabel}
-        </p>
-        <div className="language-bar-controls">
-          <SoundtrackToggle
-            isMuted={isSoundtrackMuted}
-            ui={ui}
-            onToggle={onSoundtrackToggle}
+        <div className="language-bar-edition">
+          <p id={EDITION_LANGUAGE_LABEL_ID} className="language-bar-kicker">
+            {editionLabel}
+          </p>
+          <LanguageSwitcher
+            locale={locale}
+            labelledBy={EDITION_LANGUAGE_LABEL_ID}
+            onChange={onChange}
           />
-          {isTmiReady && (
-            <TmiToggle
-              isUnlocked={isTmiUnlocked}
-              ui={ui}
-              onToggle={onTmiToggle}
-            />
-          )}
-          {languages.map((language) => (
-            <LanguageFlagButton
-              key={language.locale}
-              language={language}
-              isActive={locale === language.locale}
-              onSelect={onChange}
-            />
-          ))}
         </div>
+        <EditionTools
+          ui={ui}
+          isSoundtrackMuted={isSoundtrackMuted}
+          isTmiReady={isTmiReady}
+          isTmiUnlocked={isTmiUnlocked}
+          onSoundtrackToggle={onSoundtrackToggle}
+          onTmiToggle={onTmiToggle}
+        />
       </div>
     </div>
   );

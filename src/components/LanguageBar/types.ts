@@ -25,6 +25,21 @@ export type LanguageFlagButtonProps = {
   onSelect: (locale: Locale) => void;
 };
 
+export type LanguageSwitcherProps = {
+  locale: Locale;
+  labelledBy: string;
+  onChange: (locale: Locale) => void;
+};
+
+export type EditionToolsProps = {
+  ui: UiStrings;
+  isSoundtrackMuted: boolean;
+  isTmiReady: boolean;
+  isTmiUnlocked: boolean;
+  onSoundtrackToggle: () => void;
+  onTmiToggle: () => void;
+};
+
 export type TmiToggleProps = {
   isUnlocked: boolean;
   ui: UiStrings;
