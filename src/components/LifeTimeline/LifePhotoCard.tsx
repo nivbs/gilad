@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 
+import { LifePhotoCaption } from "@/components/LifeTimeline/LifePhotoCaption";
 import { LifePhotoFrame } from "@/components/LifeTimeline/LifePhotoFrame";
 import type { LifePhotoCardProps } from "@/components/LifeTimeline/types";
 
@@ -20,9 +21,7 @@ export function LifePhotoCard({
     return (
       <figure className={figureClass}>
         <LifePhotoFrame photo={photo} variant={variant} />
-        <figcaption className="mt-2 text-center text-xs leading-snug text-ink-muted">
-          {photo.caption}
-        </figcaption>
+        <LifePhotoCaption caption={photo.caption} />
       </figure>
     );
   }
@@ -40,9 +39,7 @@ export function LifePhotoCard({
       }}
     >
       <LifePhotoFrame photo={photo} variant={variant} />
-      <figcaption className="mt-2 text-center text-xs leading-snug text-ink-muted">
-        {photo.caption}
-      </figcaption>
+      <LifePhotoCaption caption={photo.caption} />
     </motion.figure>
   );
 }

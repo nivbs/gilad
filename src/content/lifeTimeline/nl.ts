@@ -35,13 +35,8 @@ const captions: Record<string, string> = {
   "life-2003-01":
     "Bijna twee. In de crèche, beide oren geïnfecteerd — watten in beide, en dat vond hij niks.",
   "life-2004-01": "Gilads derde verjaardag. Zo schattig.",
-  "life-2004-02": "Eerste sneeuw.",
   "life-2004-03": "Bloemen plukken met Omri.",
   "life-2005-01": "Broers met Abba Moti.",
-  "life-2005-02": "Met Omri.",
-  "life-2005-03": "Op de heuvel.",
-  "life-2005-04": "Onder de palmen.",
-  "life-2005-05": "Al aan het roer.",
 };
 
 export const nlLifeTimeline = {

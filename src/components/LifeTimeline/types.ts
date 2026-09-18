@@ -15,6 +15,10 @@ export type LifeTimelineSharedProps = {
   prefersReducedMotion: boolean;
 };
 
+export type LifePhotoCaptionProps = {
+  caption: string;
+};
+
 export type LifePhotoCardProps = LifeTimelineSharedProps & {
   photo: LifePhoto;
   index?: number;
