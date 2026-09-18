@@ -29,7 +29,6 @@ export function CorrespondenceDesk({
           photos={correspondence.photos}
           size="correspondence"
           ariaLabel={ui.longDistance}
-          isRtl={isRtl}
           prefersReducedMotion={prefersReducedMotion}
           showCaption={false}
         />

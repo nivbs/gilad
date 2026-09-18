@@ -7,14 +7,12 @@ const RESUME_AFTER_MS = 6000;
 
 type UseLifePhotoSliderOptions = {
   slideCount: number;
-  isRtl: boolean;
   prefersReducedMotion: boolean;
   containerRef: React.RefObject<HTMLElement | null>;
 };
 
 export function useLifePhotoSlider({
   slideCount,
-  isRtl,
   prefersReducedMotion,
   containerRef,
 }: UseLifePhotoSliderOptions) {
@@ -49,22 +47,6 @@ export function useLifePhotoSlider({
   const goPrev = useCallback(() => {
     goTo(activeIndex - 1);
   }, [activeIndex, goTo]);
-
-  const goNextVisual = useCallback(() => {
-    if (isRtl) {
-      goPrev();
-    } else {
-      goNext();
-    }
-  }, [goNext, goPrev, isRtl]);
-
-  const goPrevVisual = useCallback(() => {
-    if (isRtl) {
-      goNext();
-    } else {
-      goPrev();
-    }
-  }, [goNext, goPrev, isRtl]);
 
   const markUserInteraction = useCallback(() => {
     setIsPausedByUser(true);
@@ -133,12 +115,12 @@ export function useLifePhotoSlider({
     }
 
     const timer = setInterval(() => {
-      goNextVisual();
+      goNext();
     }, AUTO_ADVANCE_MS);
 
     return () => clearInterval(timer);
   }, [
-    goNextVisual,
+    goNext,
     isDragging,
     isInView,
     isPausedByUser,
@@ -163,8 +145,8 @@ export function useLifePhotoSlider({
     isDragging,
     shouldAnimate,
     goTo: onSelectIndex,
-    goNext: goNextVisual,
-    goPrev: goPrevVisual,
+    goNext,
+    goPrev,
     onDragStart,
     onDragEnd,
     onPointerDown,

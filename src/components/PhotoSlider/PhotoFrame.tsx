@@ -31,6 +31,7 @@ export function PhotoFrame({ photo, variant, eager = false }: PhotoFrameProps) {
   if (photo.placeholder) {
     return (
       <div
+        dir="ltr"
         className={`photo-well ${wellClass} flex ${aspectClass} items-center justify-center p-4`}
       >
         <span className="text-xs uppercase tracking-widest text-ink-muted">
@@ -41,7 +42,10 @@ export function PhotoFrame({ photo, variant, eager = false }: PhotoFrameProps) {
   }
 
   const frame = (
-    <div className={`photo-well ${wellClass} relative ${aspectClass} overflow-hidden`}>
+    <div
+      dir="ltr"
+      className={`photo-well ${wellClass} relative ${aspectClass} overflow-hidden`}
+    >
       <Image
         src={photo.src}
         alt={photo.alt}

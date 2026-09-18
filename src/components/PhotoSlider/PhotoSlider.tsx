@@ -23,7 +23,6 @@ export function PhotoSlider({
   photos,
   size,
   ariaLabel,
-  isRtl,
   prefersReducedMotion,
   showCaption = true,
 }: PhotoSliderProps) {
@@ -46,7 +45,6 @@ export function PhotoSlider({
     markUserInteraction,
   } = useLifePhotoSlider({
     slideCount: photos.length,
-    isRtl,
     prefersReducedMotion,
     containerRef,
   });
@@ -105,18 +103,10 @@ export function PhotoSlider({
     const velocityThreshold = 250;
     let nextIndex = activeIndex;
 
-    if (isRtl) {
-      if (info.offset.x > threshold || info.velocity.x > velocityThreshold) {
-        nextIndex = activeIndex - 1;
-      } else if (info.offset.x < -threshold || info.velocity.x < -velocityThreshold) {
-        nextIndex = activeIndex + 1;
-      }
-    } else {
-      if (info.offset.x < -threshold || info.velocity.x < -velocityThreshold) {
-        nextIndex = activeIndex + 1;
-      } else if (info.offset.x > threshold || info.velocity.x > velocityThreshold) {
-        nextIndex = activeIndex - 1;
-      }
+    if (info.offset.x < -threshold || info.velocity.x < -velocityThreshold) {
+      nextIndex = activeIndex + 1;
+    } else if (info.offset.x > threshold || info.velocity.x > velocityThreshold) {
+      nextIndex = activeIndex - 1;
     }
 
     goTo(nextIndex);
@@ -125,20 +115,12 @@ export function PhotoSlider({
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (event.key === "ArrowLeft") {
       event.preventDefault();
-      if (isRtl) {
-        goNext();
-      } else {
-        goPrev();
-      }
+      goPrev();
       markUserInteraction();
     }
     if (event.key === "ArrowRight") {
       event.preventDefault();
-      if (isRtl) {
-        goPrev();
-      } else {
-        goNext();
-      }
+      goNext();
       markUserInteraction();
     }
   };
@@ -160,6 +142,7 @@ export function PhotoSlider({
         aria-label={ariaLabel}
         tabIndex={0}
         onKeyDown={handleKeyDown}
+        dir="ltr"
         className="life-photo-slider-viewport relative overflow-hidden"
       >
         <motion.div
@@ -217,11 +200,7 @@ export function PhotoSlider({
       )}
 
       {showNav && (
-        <div
-          className={`mt-3 flex items-center justify-center gap-3 ${
-            isRtl ? "flex-row-reverse" : ""
-          }`}
-        >
+        <div className="mt-3 flex items-center justify-center gap-3">
           <button
             type="button"
             onClick={() => {
@@ -234,7 +213,7 @@ export function PhotoSlider({
             ‹
           </button>
 
-          <div className={`flex gap-2 ${isRtl ? "flex-row-reverse" : ""}`}>
+          <div className="flex gap-2">
             {photos.map((photo, index) => {
               const isActive = index === activeIndex;
               return (

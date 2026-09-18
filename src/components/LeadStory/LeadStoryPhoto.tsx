@@ -17,7 +17,7 @@ export function LeadStoryPhoto({
 
   return (
     <figure className="lead-story-photo">
-      <div className="photo-well relative aspect-[4/5] overflow-hidden">
+      <div dir="ltr" className="photo-well relative aspect-[4/5] overflow-hidden">
         <Image
           src={photoSrc}
           alt={photoAlt}

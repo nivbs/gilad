@@ -7,7 +7,6 @@ export function LifePhotoSlider({
   photos,
   chapterYear,
   chapterYearLabel,
-  isRtl,
   prefersReducedMotion,
 }: LifePhotoSliderProps) {
   const yearLabel = chapterYearLabel ?? String(chapterYear);
@@ -17,7 +16,6 @@ export function LifePhotoSlider({
       photos={photos}
       size="archive"
       ariaLabel={`${yearLabel} photographs`}
-      isRtl={isRtl}
       prefersReducedMotion={prefersReducedMotion}
     />
   );

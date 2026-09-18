@@ -61,7 +61,7 @@ export function DispatchGag({ gag, isRtl, prefersReducedMotion }: DispatchGagPro
       animate={animate}
       transition={transition}
     >
-      <div className="dispatch-gag-icon relative h-16 w-16 md:h-24 md:w-24">
+      <div dir="ltr" className="dispatch-gag-icon relative h-16 w-16 md:h-24 md:w-24">
         <Image src={config.icon} alt="" fill className="object-contain drop-shadow-md" />
       </div>
     </motion.div>

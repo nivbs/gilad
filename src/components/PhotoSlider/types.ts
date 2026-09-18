@@ -14,7 +14,6 @@ export type PhotoSliderProps = {
   photos: LifePhoto[];
   size: PhotoSliderSize;
   ariaLabel: string;
-  isRtl: boolean;
   prefersReducedMotion: boolean;
   showCaption?: boolean;
 };

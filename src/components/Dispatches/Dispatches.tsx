@@ -148,7 +148,6 @@ function DispatchItem({
                   photos={dispatch.photos}
                   size="dispatch"
                   ariaLabel={dispatch.headline}
-                  isRtl={isRtl}
                   prefersReducedMotion={prefersReducedMotion}
                 />
               </div>
