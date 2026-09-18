@@ -18,6 +18,7 @@ import { TimelineRail } from "@/components/TimelineRail/TimelineRail";
 import { TmiProvider } from "@/components/Tmi/TmiProvider";
 import { getEdition } from "@/content/locales";
 import { useDispatchTimeline } from "@/hooks/useDispatchTimeline";
+import { useEditionSoundtrack } from "@/hooks/useEditionSoundtrack";
 import { useLocale } from "@/hooks/useLocale";
 import { usePaperIntro } from "@/hooks/usePaperIntro";
 
@@ -25,6 +26,7 @@ export function Edition() {
   const { locale, setLocale, isRtl, isReady } = useLocale();
   const edition = getEdition(locale);
   const { isOpen, prefersReducedMotion, open, skip } = usePaperIntro();
+  const soundtrack = useEditionSoundtrack({ isOpen });
   const [showConfetti, setShowConfetti] = useState(false);
   const timeline = useDispatchTimeline({
     dispatches: edition.dispatches,
@@ -104,8 +106,14 @@ export function Edition() {
         subtitle={edition.masthead.subtitle}
         tagline={edition.masthead.tagline}
         ui={edition.ui}
-        onOpen={open}
-        onSkip={skip}
+        onOpen={() => {
+          open();
+          soundtrack.enableWithGesture();
+        }}
+        onSkip={() => {
+          skip();
+          soundtrack.enableWithGesture();
+        }}
       />
 
       {isOpen && (
@@ -128,32 +136,36 @@ export function Edition() {
                 locale={locale}
                 editionLabel={edition.ui.languageEdition}
                 ui={edition.ui}
+                isSoundtrackMuted={soundtrack.isMuted}
+                onSoundtrackToggle={soundtrack.toggleMute}
                 onChange={setLocale}
               />
 
-            <motion.div
-              custom={0}
-              initial={prefersReducedMotion ? undefined : "hidden"}
-              animate={prefersReducedMotion ? undefined : "visible"}
-              variants={prefersReducedMotion ? undefined : sectionVariants}
-            >
-              <Masthead masthead={edition.masthead} isRtl={isRtl} />
-            </motion.div>
+            <div id="opening">
+              <motion.div
+                custom={0}
+                initial={prefersReducedMotion ? undefined : "hidden"}
+                animate={prefersReducedMotion ? undefined : "visible"}
+                variants={prefersReducedMotion ? undefined : sectionVariants}
+              >
+                <Masthead masthead={edition.masthead} isRtl={isRtl} />
+              </motion.div>
 
-            <motion.div
-              custom={1}
-              initial={prefersReducedMotion ? undefined : "hidden"}
-              animate={prefersReducedMotion ? undefined : "visible"}
-              variants={prefersReducedMotion ? undefined : sectionVariants}
-            >
-              <LeadStory
-                leadStory={edition.leadStory}
-                ui={edition.ui}
-                isRtl={isRtl}
-                prefersReducedMotion={prefersReducedMotion}
-                onContinue={scrollToLifeTimeline}
-              />
-            </motion.div>
+              <motion.div
+                custom={1}
+                initial={prefersReducedMotion ? undefined : "hidden"}
+                animate={prefersReducedMotion ? undefined : "visible"}
+                variants={prefersReducedMotion ? undefined : sectionVariants}
+              >
+                <LeadStory
+                  leadStory={edition.leadStory}
+                  ui={edition.ui}
+                  isRtl={isRtl}
+                  prefersReducedMotion={prefersReducedMotion}
+                  onContinue={scrollToLifeTimeline}
+                />
+              </motion.div>
+            </div>
 
             <motion.div
               custom={2}

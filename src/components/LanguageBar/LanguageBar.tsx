@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 
+import { SoundtrackToggle } from "@/components/SoundtrackToggle/SoundtrackToggle";
 import { useTmi } from "@/components/Tmi/TmiProvider";
 import type { Locale, UiStrings } from "@/content/types";
 
@@ -22,10 +23,19 @@ type LanguageBarProps = {
   locale: Locale;
   editionLabel: string;
   ui: UiStrings;
+  isSoundtrackMuted: boolean;
+  onSoundtrackToggle: () => void;
   onChange: (locale: Locale) => void;
 };
 
-export function LanguageBar({ locale, editionLabel, ui, onChange }: LanguageBarProps) {
+export function LanguageBar({
+  locale,
+  editionLabel,
+  ui,
+  isSoundtrackMuted,
+  onSoundtrackToggle,
+  onChange,
+}: LanguageBarProps) {
   const { isUnlocked, isReady, requestUnlock, lock } = useTmi();
 
   return (
@@ -35,6 +45,11 @@ export function LanguageBar({ locale, editionLabel, ui, onChange }: LanguageBarP
           {editionLabel}
         </p>
         <div className="flex flex-wrap items-center gap-2">
+          <SoundtrackToggle
+            isMuted={isSoundtrackMuted}
+            ui={ui}
+            onToggle={onSoundtrackToggle}
+          />
           {isReady && (
             <button
               type="button"

@@ -122,6 +122,8 @@ export type UiStrings = {
   tmiPasswordWrong: string;
   tmiPasswordSuccess: string;
   tmiPasswordClose: string;
+  soundtrackMute: string;
+  soundtrackUnmute: string;
 };
 
 export type Edition = {

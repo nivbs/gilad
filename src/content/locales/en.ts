@@ -382,5 +382,7 @@ export const enEdition: Edition = {
     tmiPasswordWrong: "Filing rejected. Clearance denied.",
     tmiPasswordSuccess: "Clearance granted.",
     tmiPasswordClose: "Close",
+    soundtrackMute: "Mute",
+    soundtrackUnmute: "Unmute",
   },
 };

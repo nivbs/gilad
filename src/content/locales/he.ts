@@ -386,5 +386,7 @@ export const heEdition: Edition = {
     tmiPasswordWrong: "הדיווח נדחה. גישה נחסמה.",
     tmiPasswordSuccess: "הגישה אושרה.",
     tmiPasswordClose: "סגור",
+    soundtrackMute: "השתק",
+    soundtrackUnmute: "הפעל סאונד",
   },
 };

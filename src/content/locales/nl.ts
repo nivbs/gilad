@@ -391,5 +391,7 @@ export const nlEdition: Edition = {
     tmiPasswordWrong: "Dossier afgewezen. Toegang geweigerd.",
     tmiPasswordSuccess: "Toegang verleend.",
     tmiPasswordClose: "Sluiten",
+    soundtrackMute: "Dempen",
+    soundtrackUnmute: "Geluid aan",
   },
 };

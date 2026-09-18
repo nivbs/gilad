@@ -417,6 +417,33 @@ body {
   text-underline-offset: 2px;
 }
 
+.soundtrack-toggle {
+  border: 1px solid var(--ink);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.soundtrack-toggle--muted {
+  background: var(--newsprint);
+  color: var(--ink);
+}
+
+.soundtrack-toggle--muted:hover {
+  background: var(--ink);
+  color: var(--newsprint);
+}
+
+.soundtrack-toggle--playing {
+  background: var(--ink);
+  color: var(--newsprint);
+}
+
 @keyframes tmi-desk-shake {
   0%,
   100% {
