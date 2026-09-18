@@ -618,6 +618,37 @@ body {
   }
 }
 
+.confetti-gutter {
+  width: var(--confetti-gutter-width);
+}
+
+.confetti-gutter-top {
+  left: var(--confetti-gutter-width);
+  right: var(--confetti-gutter-width);
+}
+
+@media (min-width: 768px) {
+  .confetti-gutter {
+    width: var(--confetti-gutter-width-md);
+  }
+
+  .confetti-gutter-top {
+    left: var(--confetti-gutter-width-md);
+    right: var(--confetti-gutter-width-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .confetti-gutter {
+    width: var(--confetti-gutter-width-lg);
+  }
+
+  .confetti-gutter-top {
+    left: var(--confetti-gutter-width-lg);
+    right: var(--confetti-gutter-width-lg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
