@@ -1,13 +1,31 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="uk-flag">
+      <rect width="60" height="30"/>
+    </clipPath>
+    <clipPath id="uk-saltire">
+      <path d="M30 15h30v15zv15h-30zh-30v-15zv-15h30z"/>
+    </clipPath>
+  </defs>
   <line x1="8" y1="8" x2="8" y2="56" stroke="#1A1A1A" stroke-width="2"/>
-  <rect x="10" y="10" width="12" height="8" fill="#C8102E"/>
-  <rect x="10" y="18" width="12" height="8" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="0.5"/>
-  <rect x="10" y="26" width="12" height="8" fill="#012169"/>
   <line x1="26" y1="12" x2="26" y2="56" stroke="#1A1A1A" stroke-width="2"/>
-  <rect x="28" y="14" width="12" height="16" fill="#AE1C28"/>
-  <rect x="28" y="30" width="12" height="5" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="0.5"/>
-  <rect x="28" y="35" width="12" height="5" fill="#21468B"/>
   <line x1="44" y1="16" x2="44" y2="56" stroke="#1A1A1A" stroke-width="2"/>
-  <rect x="46" y="18" width="12" height="14" fill="#C8102E"/>
-  <rect x="46" y="32" width="12" height="14" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="0.5"/>
+  <rect x="10" y="10" width="14" height="3.34" fill="#AE1C28"/>
+  <rect x="10" y="13.34" width="14" height="3.32" fill="#FFFFFF"/>
+  <rect x="10" y="16.66" width="14" height="3.34" fill="#21468B"/>
+  <rect x="10" y="10" width="14" height="10" fill="none" stroke="#1A1A1A" stroke-width="0.5"/>
+  <g transform="translate(28 14) scale(0.23333)">
+    <g clip-path="url(#uk-flag)">
+      <rect width="60" height="30" fill="#012169"/>
+      <path d="M0 0l60 30M60 0L0 30" stroke="#FFFFFF" stroke-width="6"/>
+      <path d="M0 0l60 30M60 0L0 30" clip-path="url(#uk-saltire)" stroke="#C8102E" stroke-width="4"/>
+      <path d="M30 0v30M0 15h60" stroke="#FFFFFF" stroke-width="10"/>
+      <path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/>
+    </g>
+  </g>
+  <rect x="28" y="14" width="14" height="7" fill="none" stroke="#1A1A1A" stroke-width="0.5"/>
+  <rect x="46" y="18" width="14" height="9" fill="#C8102E"/>
+  <rect x="50" y="18" width="2.2" height="9" fill="#FFFFFF"/>
+  <rect x="46" y="21.4" width="14" height="2.2" fill="#FFFFFF"/>
+  <rect x="46" y="18" width="14" height="9" fill="none" stroke="#1A1A1A" stroke-width="0.5"/>
 </svg>
