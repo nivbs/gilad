@@ -2,12 +2,16 @@
 
 import { AnimatePresence, motion } from "motion/react";
 
+import { IntroAmbientConfetti } from "@/components/BirthdayConfetti/IntroAmbientConfetti";
+import type { CelebrationConfettiPiece } from "@/components/BirthdayConfetti/types";
 import { NewspaperButton } from "@/components/NewspaperButton/NewspaperButton";
 import type { UiStrings } from "@/content/types";
 
 type PaperIntroProps = {
   isOpen: boolean;
   prefersReducedMotion: boolean;
+  ambientPieces: CelebrationConfettiPiece[];
+  showAmbient: boolean;
   title: string;
   subtitle: string;
   tagline: string;
@@ -19,6 +23,8 @@ type PaperIntroProps = {
 export function PaperIntro({
   isOpen,
   prefersReducedMotion,
+  ambientPieces,
+  showAmbient,
   title,
   subtitle,
   tagline,
@@ -39,7 +45,13 @@ export function PaperIntro({
           }
           transition={{ duration: prefersReducedMotion ? 0.2 : 0.8, ease: "easeInOut" }}
         >
-          <div className="paper-grain edition-frame mx-auto w-full max-w-2xl p-8 text-center">
+          {showAmbient && (
+            <IntroAmbientConfetti
+              pieces={ambientPieces}
+              prefersReducedMotion={prefersReducedMotion}
+            />
+          )}
+          <div className="relative z-10 paper-grain edition-frame mx-auto w-full max-w-2xl p-8 text-center">
             <motion.div
               className="relative mx-auto mb-8 h-48 w-full max-w-md"
               initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}

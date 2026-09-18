@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion, type Variants } from "motion/react";
 
 import { BirthdayConfetti } from "@/components/BirthdayConfetti/BirthdayConfetti";
+import { MarginConfetti } from "@/components/BirthdayConfetti/MarginConfetti";
 import { Blessing } from "@/components/Blessing/Blessing";
 import { Colophon } from "@/components/Colophon/Colophon";
 import { Dispatches } from "@/components/Dispatches/Dispatches";
@@ -20,6 +20,7 @@ import { getEdition } from "@/content/locales";
 import { useDispatchTimeline } from "@/hooks/useDispatchTimeline";
 import { useEditionSoundtrack } from "@/hooks/useEditionSoundtrack";
 import { useLocale } from "@/hooks/useLocale";
+import { useCelebrationConfetti } from "@/hooks/useCelebrationConfetti";
 import { usePaperIntro } from "@/hooks/usePaperIntro";
 
 export function Edition() {
@@ -27,7 +28,7 @@ export function Edition() {
   const edition = getEdition(locale);
   const { isOpen, prefersReducedMotion, open, skip } = usePaperIntro();
   const soundtrack = useEditionSoundtrack({ isOpen });
-  const [showConfetti, setShowConfetti] = useState(false);
+  const celebration = useCelebrationConfetti({ isOpen, prefersReducedMotion });
   const timeline = useDispatchTimeline({
     dispatches: edition.dispatches,
     defaultExpandedId: "dispatch-feb-6-2025",
@@ -69,16 +70,6 @@ export function Edition() {
     });
   };
 
-  useEffect(() => {
-    if (!isOpen || prefersReducedMotion) {
-      return;
-    }
-
-    setShowConfetti(true);
-    const timer = window.setTimeout(() => setShowConfetti(false), 3200);
-    return () => window.clearTimeout(timer);
-  }, [isOpen, prefersReducedMotion]);
-
   const sectionVariants: Variants = {
     hidden: { opacity: 0, y: 24 },
     visible: (index: number) => ({
@@ -98,10 +89,16 @@ export function Edition() {
 
   return (
     <>
-      <BirthdayConfetti active={showConfetti} prefersReducedMotion={prefersReducedMotion} />
+      <BirthdayConfetti
+        burstPieces={celebration.burstPieces}
+        showBurst={celebration.showBurst}
+        prefersReducedMotion={prefersReducedMotion}
+      />
       <PaperIntro
         isOpen={isOpen}
         prefersReducedMotion={prefersReducedMotion}
+        ambientPieces={celebration.ambientPieces}
+        showAmbient={celebration.showAmbient}
         title={edition.masthead.title}
         subtitle={edition.masthead.subtitle}
         tagline={edition.masthead.tagline}
@@ -123,11 +120,17 @@ export function Edition() {
           prefersReducedMotion={prefersReducedMotion}
         >
           <main
-            className="min-h-screen bg-newsprint px-4 py-8 md:px-8 lg:px-12"
+            className="relative min-h-screen bg-newsprint px-4 py-8 md:px-8 lg:px-12"
             dir={isRtl ? "rtl" : "ltr"}
           >
+            <MarginConfetti
+              pieces={celebration.marginPieces}
+              visible={celebration.showMargins}
+              isSettling={celebration.isSettling}
+              prefersReducedMotion={prefersReducedMotion}
+            />
             <motion.div
-              className="paper-grain edition-sheet edition-frame mx-auto max-w-6xl border-2 border-ink bg-newsprint px-4 py-4 shadow-lg md:px-8 md:py-8"
+              className="relative z-10 paper-grain edition-sheet edition-frame mx-auto max-w-6xl border-2 border-ink bg-newsprint px-4 py-4 shadow-lg md:px-8 md:py-8"
               initial={prefersReducedMotion ? false : { opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
