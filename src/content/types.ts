@@ -47,11 +47,13 @@ export type LifePhoto = {
   caption: string;
   placeholder?: boolean;
   tmi?: boolean;
+  objectFit?: "cover" | "contain";
 };
 
 export type LifeYearChapter = {
   id: string;
   year: number;
+  yearLabel?: string;
   kicker?: string;
   headline?: string;
   photos: LifePhoto[];

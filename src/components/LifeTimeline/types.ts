@@ -24,6 +24,7 @@ export type LifePhotoCardProps = LifeTimelineSharedProps & {
 export type LifePhotoSliderProps = LifeTimelineSharedProps & {
   photos: LifePhoto[];
   chapterYear: number;
+  chapterYearLabel?: string;
 };
 
 export type LifeYearChapterProps = LifeTimelineSharedProps & {

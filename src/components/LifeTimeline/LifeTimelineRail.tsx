@@ -48,7 +48,7 @@ export function LifeTimelineRail({
                         isActive ? "text-ink" : "text-ink-muted"
                       }`}
                     >
-                      {chapter.year}
+                      {chapter.yearLabel ?? chapter.year}
                     </p>
                     {chapter.headline && (
                       <p
@@ -91,7 +91,7 @@ export function LifeTimelineRail({
                     : "border-ink bg-newsprint text-ink hover:bg-ink hover:text-newsprint"
                 }`}
               >
-                {chapter.year}
+                {chapter.yearLabel ?? chapter.year}
               </button>
             );
           })}

@@ -6,11 +6,13 @@ type PhotoEntry = {
   alt: string;
   year: number;
   location?: string;
+  caption?: string;
   placeholder?: boolean;
+  objectFit?: "cover" | "contain";
 };
 
-function buildCaption({ year, location }: PhotoEntry): string {
-  return location ?? String(year);
+function buildCaption({ year, location, caption }: PhotoEntry): string {
+  return caption ?? location ?? String(year);
 }
 
 function toLifePhoto(entry: PhotoEntry): LifePhoto {
@@ -20,10 +22,130 @@ function toLifePhoto(entry: PhotoEntry): LifePhoto {
     alt: entry.alt,
     caption: buildCaption(entry),
     placeholder: entry.placeholder,
+    objectFit: entry.objectFit,
   };
 }
 
 const catalog: PhotoEntry[] = [
+  {
+    id: "life-2001-01",
+    src: "/life-timeline/2001/01.jpg",
+    alt: "Newborn Gilad held by an older girl",
+    year: 2001,
+    caption: "Newborn Gilad in the arms of an older girl.",
+    objectFit: "contain",
+  },
+  {
+    id: "life-2001-02",
+    src: "/life-timeline/2001/02.jpg",
+    alt: "Gilad and Omri as babies lying side by side in a crib",
+    year: 2001,
+    caption: "Gilad and Omri sharing a crib.",
+    objectFit: "contain",
+  },
+  {
+    id: "life-2001-03",
+    src: "/life-timeline/2001/03.jpg",
+    alt: "Gilad and Omri asleep in a side-by-side pram",
+    year: 2001,
+    caption: "The twins asleep in the pram.",
+  },
+  {
+    id: "life-2001-04",
+    src: "/life-timeline/2001/04.jpg",
+    alt: "Baby Gilad sitting in a bouncer",
+    year: 2001,
+    caption: "Baby Gilad in the bouncer.",
+  },
+  {
+    id: "life-2002-01",
+    src: "/life-timeline/2002/01.jpg",
+    alt: "Gilad as a toddler close-up",
+    year: 2002,
+    caption: "One and a half, and already a biggy.",
+    objectFit: "contain",
+  },
+  {
+    id: "life-2002-02",
+    src: "/life-timeline/2002/02.jpg",
+    alt: "Gilad being fed in a high chair",
+    year: 2002,
+    caption: "Lunch in the high chair.",
+  },
+  {
+    id: "life-2002-03",
+    src: "/life-timeline/2002/03.jpg",
+    alt: "Gilad and Omri standing together in a crib",
+    year: 2002,
+    caption: "Gilad and Omri were always next to each other.",
+  },
+  {
+    id: "life-2003-01",
+    src: "/life-timeline/2003/01.jpg",
+    alt: "Gilad crying in day care with cotton in both ears",
+    year: 2003,
+    caption:
+      "Almost two. Day care, both ears infected — cotton in both, and he did not like it.",
+  },
+  {
+    id: "life-2004-01",
+    src: "/life-timeline/2004/01.jpg",
+    alt: "Gilad smiling on his third birthday wearing a flower crown",
+    year: 2004,
+    caption: "Gilad's third birthday. So cute.",
+  },
+  {
+    id: "life-2004-02",
+    src: "/life-timeline/2004/02.jpg",
+    alt: "Gilad holding a snowball in winter",
+    year: 2004,
+    caption: "First snow.",
+  },
+  {
+    id: "life-2004-03",
+    src: "/life-timeline/2004/03.jpg",
+    alt: "Gilad and Omri picking wildflowers in a field",
+    year: 2004,
+    caption: "Picking flowers with Omri.",
+    objectFit: "contain",
+  },
+  {
+    id: "life-2005-01",
+    src: "/life-timeline/2005/01.jpg",
+    alt: "Gilad and his brothers with their father Moti",
+    year: 2005,
+    caption: "Brothers with Abba Moti.",
+  },
+  {
+    id: "life-2005-02",
+    src: "/life-timeline/2005/02.jpg",
+    alt: "Gilad and Omri smiling together as young boys",
+    year: 2005,
+    caption: "With Omri.",
+    objectFit: "contain",
+  },
+  {
+    id: "life-2005-03",
+    src: "/life-timeline/2005/03.jpg",
+    alt: "Gilad outdoors on a grassy hillside",
+    year: 2005,
+    caption: "On the hillside.",
+  },
+  {
+    id: "life-2005-04",
+    src: "/life-timeline/2005/04.jpg",
+    alt: "Gilad standing outdoors near palm trees",
+    year: 2005,
+    caption: "Under the palms.",
+  },
+  {
+    id: "life-2005-05",
+    src: "/life-timeline/2005/05.jpg",
+    alt: "Gilad steering a small boat on a canal",
+    year: 2005,
+    caption: "Already at the helm.",
+    objectFit: "contain",
+  },
   { id: "life-2017-01", src: "/life-timeline/2017/01.jpg", alt: "Gilad on the Alpe d'Huez podium", year: 2017 },
   { id: "life-2017-02", src: "/life-timeline/2017/02.jpg", alt: "Gilad in the sea", year: 2017 },
   { id: "life-2017-03", src: "/life-timeline/2017/03.jpg", alt: "Gilad playing cards outdoors", year: 2017 },

@@ -1,6 +1,11 @@
 import { buildLifeChapters } from "@/content/lifeTimeline/chapters";
 
 const headlines: Record<string, string> = {
+  "life-year-2001": "Infant Year",
+  "life-year-2002": "Age One",
+  "life-year-2003": "Age Two",
+  "life-year-2004": "Age Three",
+  "life-year-2005": "Childhood",
   "life-year-2020": "August in Israel",
   "life-year-2023": "Haifa on Record",
   "life-year-2024": "Tel Aviv, Norway",
@@ -8,6 +13,11 @@ const headlines: Record<string, string> = {
 };
 
 const kickers: Record<string, string> = {
+  "life-year-2001": "Childhood",
+  "life-year-2002": "Childhood",
+  "life-year-2003": "Childhood",
+  "life-year-2004": "Childhood",
+  "life-year-2005": "Childhood",
   "life-year-2020": "Foreign Desk",
   "life-year-2023": "Dispatch",
   "life-year-2024": "Travel",

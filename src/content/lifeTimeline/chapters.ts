@@ -4,12 +4,55 @@ import type { LifeYearChapter } from "@/content/types";
 type ChapterMeta = {
   id: string;
   year: number;
+  yearLabel?: string;
   kicker?: string;
   headline?: string;
   photoIds: string[];
 };
 
 const chapterMeta: ChapterMeta[] = [
+  {
+    id: "life-year-2001",
+    year: 2001,
+    kicker: "Childhood",
+    headline: "Infant Year",
+    photoIds: ["life-2001-01", "life-2001-02", "life-2001-03", "life-2001-04"],
+  },
+  {
+    id: "life-year-2002",
+    year: 2002,
+    kicker: "Childhood",
+    headline: "Age One",
+    photoIds: ["life-2002-01", "life-2002-02", "life-2002-03"],
+  },
+  {
+    id: "life-year-2003",
+    year: 2003,
+    kicker: "Childhood",
+    headline: "Age Two",
+    photoIds: ["life-2003-01"],
+  },
+  {
+    id: "life-year-2004",
+    year: 2004,
+    kicker: "Childhood",
+    headline: "Age Three",
+    photoIds: ["life-2004-01", "life-2004-02", "life-2004-03"],
+  },
+  {
+    id: "life-year-2005",
+    year: 2005,
+    yearLabel: "2005–09",
+    kicker: "Childhood",
+    headline: "Childhood",
+    photoIds: [
+      "life-2005-01",
+      "life-2005-02",
+      "life-2005-03",
+      "life-2005-04",
+      "life-2005-05",
+    ],
+  },
   {
     id: "life-year-2017",
     year: 2017,
@@ -78,13 +121,18 @@ const chapterMeta: ChapterMeta[] = [
 export function buildLifeChapters(
   headlines: Record<string, string>,
   kickers: Record<string, string>,
+  captions: Record<string, string> = {},
 ): LifeYearChapter[] {
   return chapterMeta.map((chapter) => ({
     id: chapter.id,
     year: chapter.year,
+    yearLabel: chapter.yearLabel,
     kicker: kickers[chapter.id] ?? chapter.kicker,
     headline: headlines[chapter.id] ?? chapter.headline,
-    photos: getLifePhotos(chapter.photoIds),
+    photos: getLifePhotos(chapter.photoIds).map((photo) => ({
+      ...photo,
+      caption: captions[photo.id] ?? photo.caption,
+    })),
   }));
 }
 

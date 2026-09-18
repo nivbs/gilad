@@ -20,7 +20,7 @@ export function LifePhotoCard({
     return (
       <figure className={figureClass}>
         <LifePhotoFrame photo={photo} variant={variant} />
-        <figcaption className="mt-2 text-center text-[10px] uppercase tracking-widest text-ink-muted">
+        <figcaption className="mt-2 text-center text-xs leading-snug text-ink-muted">
           {photo.caption}
         </figcaption>
       </figure>
@@ -40,7 +40,7 @@ export function LifePhotoCard({
       }}
     >
       <LifePhotoFrame photo={photo} variant={variant} />
-      <figcaption className="mt-2 text-center text-[10px] uppercase tracking-widest text-ink-muted">
+      <figcaption className="mt-2 text-center text-xs leading-snug text-ink-muted">
         {photo.caption}
       </figcaption>
     </motion.figure>

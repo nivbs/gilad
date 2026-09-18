@@ -34,7 +34,7 @@ export function LifeYearChapter({
             </span>
           )}
           <span className="text-xs uppercase tracking-widest text-ink-muted">
-            {chapter.year}
+            {chapter.yearLabel ?? chapter.year}
           </span>
           <span className="text-xs text-ink-muted">{ui.photoDesk}</span>
         </div>
@@ -48,6 +48,7 @@ export function LifeYearChapter({
             <LifePhotoSlider
               photos={chapter.photos}
               chapterYear={chapter.year}
+              chapterYearLabel={chapter.yearLabel}
               ui={ui}
               isRtl={isRtl}
               prefersReducedMotion={prefersReducedMotion}

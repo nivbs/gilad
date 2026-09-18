@@ -196,7 +196,7 @@ export function PhotoSlider({
 
       {hasCaption && (
         <figcaption
-          className="mt-2 min-h-[1.25rem] text-center text-[10px] uppercase tracking-widest text-ink-muted"
+          className="mt-2 min-h-[1.25rem] text-center text-xs leading-snug text-ink-muted"
           aria-live="polite"
         >
           <AnimatePresence mode="wait">

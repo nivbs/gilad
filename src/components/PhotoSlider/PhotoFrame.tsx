@@ -53,7 +53,7 @@ export function PhotoFrame({ photo, variant }: PhotoFrameProps) {
         alt={photo.alt}
         fill
         sizes={sizeHints[variant]}
-        className="object-cover"
+        className={photo.objectFit === "contain" ? "object-contain" : "object-cover"}
         draggable={false}
       />
     </div>
