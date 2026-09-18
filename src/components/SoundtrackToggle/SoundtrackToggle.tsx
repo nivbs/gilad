@@ -9,11 +9,13 @@ export function SoundtrackToggle({ isMuted, ui, onToggle }: SoundtrackToggleProp
       onClick={onToggle}
       aria-pressed={!isMuted}
       aria-label={isMuted ? ui.soundtrackUnmute : ui.soundtrackMute}
-      className={`soundtrack-toggle min-h-11 px-3 py-2 ${
+      className={`soundtrack-toggle ${
         isMuted ? "soundtrack-toggle--muted" : "soundtrack-toggle--playing"
       }`}
     >
-      {isMuted ? ui.soundtrackUnmute : ui.soundtrackMute}
+      <span className="soundtrack-toggle-label">
+        {isMuted ? ui.soundtrackUnmute : ui.soundtrackMute}
+      </span>
     </button>
   );
 }
