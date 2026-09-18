@@ -184,13 +184,23 @@ export const nlEdition: Edition = {
     { name: "Shil Mil Chili", note: "De meest random. De meest juiste." },
   ],
   hebrewNicknames: [
-    { hebrew: "חיים טובים", transliteration: "Chaim Tovim" },
-    { hebrew: "אהבה שלי", transliteration: "Ahava Sheli — Mijn liefde" },
     {
       hebrew: "חיים שלי",
       transliteration: "Chaim Sheli — Mijn leven",
       note:
         "Gilad haat deze. Zijn Israëlische tante noemt iedereen חיים שלי, waar hij cringe van wordt. Niv vindt het heerlijk. De krant kiest de kant van Niv.",
+    },
+    {
+      hebrew: "אהבה שלי",
+      transliteration: "Ahava Sheli — Mijn liefde",
+      note:
+        "Gilad verbood חיים שלי, dus had Niv meteen een vervanger nodig. Eerste keuze: Mijn liefde. Zacht. Tijdelijk. Toch nog steeds officieel.",
+    },
+    {
+      hebrew: "חיים טובים",
+      transliteration: "Chaim Tovim — Goede levens",
+      note:
+        "Plan B na het חיים שלי-embargo: de חיים houden, טובים er willekeurig aan plakken. Vertaling: goede levens. Methode: het eerste woord dat Niv bedacht. Redactieoordeel: technisch gezien niet de tante.",
     },
   ],
   sidebarColumns: [

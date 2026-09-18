@@ -54,7 +54,7 @@ function NicknameGlossary({
       <h4 className="mt-6 font-display text-lg font-bold text-ink md:text-xl">
         {ui.hebrewEdition}
       </h4>
-      <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+      <ul className="mt-3 space-y-3">
         {hebrewNicknames.map((item) => (
           <li key={item.hebrew} className="text-sm leading-relaxed md:text-base">
             <span className="font-hebrew text-base">{item.hebrew}</span>

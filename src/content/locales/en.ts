@@ -184,13 +184,23 @@ export const enEdition: Edition = {
     { name: "Shil Mil Chili", note: "The most random. The most correct." },
   ],
   hebrewNicknames: [
-    { hebrew: "חיים טובים", transliteration: "Chaim Tovim" },
-    { hebrew: "אהבה שלי", transliteration: "Ahava Sheli — My Love" },
     {
       hebrew: "חיים שלי",
       transliteration: "Chaim Sheli — My Life",
       note:
         "Gilad hates this one. His Israeli aunt calls everyone חיים שלי, which gives him cringe. Niv loves it anyway. The newspaper sides with Niv.",
+    },
+    {
+      hebrew: "אהבה שלי",
+      transliteration: "Ahava Sheli — My Love",
+      note:
+        "Gilad banned חיים שלי, so Niv needed a replacement on the spot. First pick: My Love. Soft. Temporary. Somehow still on the books.",
+    },
+    {
+      hebrew: "חיים טובים",
+      transliteration: "Chaim Tovim — Good Lives",
+      note:
+        "Plan B after the חיים שלי embargo: keep the חיים, add טובים at random. Translation: good lives. Method: the first word Niv thought of. Editorial verdict: technically not the aunt.",
     },
   ],
   sidebarColumns: [
