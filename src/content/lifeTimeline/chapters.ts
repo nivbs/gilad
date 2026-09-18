@@ -63,13 +63,8 @@ const chapterMeta: ChapterMeta[] = [
     id: "life-year-2024",
     year: 2024,
     kicker: "Travel",
-    headline: "Netherlands, Tel Aviv, Norway",
-    photoIds: [
-      "life-2024-01",
-      "life-2024-02",
-      "life-2024-03",
-      "life-2024-04",
-    ],
+    headline: "Tel Aviv, Norway",
+    photoIds: ["life-2024-01", "life-2024-02", "life-2024-03"],
   },
   {
     id: "life-year-2025",

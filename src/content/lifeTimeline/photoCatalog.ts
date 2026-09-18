@@ -43,10 +43,9 @@ const catalog: PhotoEntry[] = [
   { id: "life-2020-03", src: "/life-timeline/2020/03.jpg", alt: "Gilad in the Negev desert", year: 2020 },
   { id: "life-2020-04", src: "/life-timeline/2020/04.jpg", alt: "Gilad floating in the Dead Sea", year: 2020 },
   { id: "life-2023-01", src: "/life-timeline/2023/01.jpg", alt: "Gilad in Haifa with the Baháʼí Gardens", year: 2023, location: "Haifa" },
-  { id: "life-2024-01", src: "/life-timeline/2024/01.jpg", alt: "Gilad in the Netherlands", year: 2024, location: "Netherlands" },
-  { id: "life-2024-02", src: "/life-timeline/2024/02.jpg", alt: "Gilad in Tel Aviv", year: 2024, location: "Tel Aviv" },
-  { id: "life-2024-03", src: "/life-timeline/2024/03.jpg", alt: "Gilad on a bench in Norway", year: 2024, location: "Norway" },
-  { id: "life-2024-04", src: "/life-timeline/2024/04.jpg", alt: "Gilad on a mountain in Norway", year: 2024, location: "Norway" },
+  { id: "life-2024-01", src: "/life-timeline/2024/01.jpg", alt: "Gilad in Tel Aviv", year: 2024, location: "Tel Aviv" },
+  { id: "life-2024-02", src: "/life-timeline/2024/02.jpg", alt: "Gilad on a bench in Norway", year: 2024, location: "Norway" },
+  { id: "life-2024-03", src: "/life-timeline/2024/03.jpg", alt: "Gilad on a mountain in Norway", year: 2024, location: "Norway" },
   { id: "life-2025-01", src: "/life-timeline/2025/01.jpg", alt: "Gilad with family at the gym on New Year's Eve", year: 2025 },
 ];
 

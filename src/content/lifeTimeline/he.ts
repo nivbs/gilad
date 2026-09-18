@@ -3,7 +3,7 @@ import { buildLifeChapters } from "@/content/lifeTimeline/chapters";
 const headlines: Record<string, string> = {
   "life-year-2020": "אוגוסט בישראל",
   "life-year-2023": "חיפה בדפוס",
-  "life-year-2024": "הולנד, תל אביב, נורבגיה",
+  "life-year-2024": "תל אביב, נורבגיה",
   "life-year-2025": "סילבסטר",
 };
 
