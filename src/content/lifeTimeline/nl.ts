@@ -25,7 +25,7 @@ const kickers: Record<string, string> = {
 };
 
 const captions: Record<string, string> = {
-  "life-2001-01": "Pasgeboren Gilad in de armen van een oudere zus.",
+  "life-2001-01": "Pasgeboren Gilad in de armen van Sharon, zijn halfzus.",
   "life-2001-02": "Gilad en Omri delen een wieg.",
   "life-2001-03": "De tweeling slaapt in de kinderwagen.",
   "life-2001-04": "Baby Gilad in de wipstoel.",

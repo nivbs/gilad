@@ -30,9 +30,9 @@ const catalog: PhotoEntry[] = [
   {
     id: "life-2001-01",
     src: "/life-timeline/2001/01.jpg",
-    alt: "Newborn Gilad held by an older girl",
+    alt: "Newborn Gilad held by Sharon, his half-sister",
     year: 2001,
-    caption: "Newborn Gilad in the arms of an older girl.",
+    caption: "Newborn Gilad in the arms of Sharon, his half-sister.",
     objectFit: "contain",
   },
   {
