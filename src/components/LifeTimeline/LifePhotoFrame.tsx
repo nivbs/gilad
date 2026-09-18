@@ -7,9 +7,10 @@ import type { LifePhotoVariant } from "@/components/LifeTimeline/types";
 type LifePhotoFrameProps = {
   photo: LifePhoto;
   variant: LifePhotoVariant;
+  eager?: boolean;
 };
 
-export function LifePhotoFrame({ photo, variant }: LifePhotoFrameProps) {
+export function LifePhotoFrame({ photo, variant, eager = false }: LifePhotoFrameProps) {
   const frameVariant = variant === "compact" ? "compact" : "default";
-  return <PhotoFrame photo={photo} variant={frameVariant} />;
+  return <PhotoFrame photo={photo} variant={frameVariant} eager={eager} />;
 }

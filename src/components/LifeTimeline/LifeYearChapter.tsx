@@ -22,9 +22,9 @@ export function LifeYearChapter({
       }`}
     >
       <motion.div
-        initial={prefersReducedMotion ? false : { opacity: 0, y: 16 }}
-        whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-60px" }}
+        initial={prefersReducedMotion ? false : { y: 16 }}
+        whileInView={prefersReducedMotion ? undefined : { y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
       >
         <div className="mb-3 flex flex-wrap items-center gap-2">

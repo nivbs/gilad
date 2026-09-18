@@ -2,15 +2,9 @@
 
 import Image from "next/image";
 
-import type { PhotoFrameVariant } from "@/components/PhotoSlider/types";
+import type { PhotoFrameProps, PhotoFrameVariant } from "@/components/PhotoSlider/types";
 import { TmiGate } from "@/components/Tmi/TmiGate";
 import { useTmi } from "@/components/Tmi/TmiProvider";
-import type { LifePhoto } from "@/content/types";
-
-type PhotoFrameProps = {
-  photo: LifePhoto;
-  variant: PhotoFrameVariant;
-};
 
 const aspectClasses: Record<PhotoFrameVariant, string> = {
   default: "aspect-[4/5]",
@@ -26,7 +20,7 @@ const sizeHints: Record<PhotoFrameVariant, string> = {
   correspondence: "160px",
 };
 
-export function PhotoFrame({ photo, variant }: PhotoFrameProps) {
+export function PhotoFrame({ photo, variant, eager = false }: PhotoFrameProps) {
   const { tmiVersion, tmiLocked } = useTmi();
   const aspectClass = aspectClasses[variant];
   const wellClass =
@@ -55,6 +49,8 @@ export function PhotoFrame({ photo, variant }: PhotoFrameProps) {
         sizes={sizeHints[variant]}
         className={photo.objectFit === "contain" ? "object-contain" : "object-cover"}
         draggable={false}
+        priority={eager}
+        loading={eager ? "eager" : "lazy"}
       />
     </div>
   );

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 
 import { DispatchGagStrip } from "@/components/DispatchGag/DispatchGagStrip";
@@ -47,6 +48,18 @@ function DispatchItem({
   onPrev: () => void;
 }) {
   const breaking = dispatch.breaking === true;
+  const [photosReady, setPhotosReady] = useState(false);
+
+  useEffect(() => {
+    if (!isExpanded) {
+      setPhotosReady(false);
+      return;
+    }
+
+    if (prefersReducedMotion) {
+      setPhotosReady(true);
+    }
+  }, [isExpanded, prefersReducedMotion]);
 
   return (
     <article
@@ -82,6 +95,11 @@ function DispatchItem({
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.35, ease: "easeInOut" }}
             className="overflow-hidden"
+            onAnimationComplete={() => {
+              if (isExpanded) {
+                setPhotosReady(true);
+              }
+            }}
           >
             <div
               className={`mt-4 flex flex-col gap-4 ${
@@ -124,7 +142,7 @@ function DispatchItem({
                 })}
               </p>
             </div>
-            {dispatch.photos && dispatch.photos.length > 0 && (
+            {dispatch.photos && dispatch.photos.length > 0 && photosReady && (
               <div className="mt-6">
                 <PhotoSlider
                   photos={dispatch.photos}

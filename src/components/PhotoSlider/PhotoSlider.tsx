@@ -174,16 +174,19 @@ export function PhotoSlider({
           onPointerUp={onPointerUp}
           onPointerLeave={onPointerUp}
         >
-          {photos.map((photo, index) => (
+          {photos.map((photo, index) => {
+            const isNearActive = Math.abs(index - activeIndex) <= 1;
+            return (
             <div
               key={photo.id}
               className="life-photo-slider-slide shrink-0"
               style={{ width: slideWidth > 0 ? `${slideWidth}px` : `${SLIDE_RATIO * 100}%` }}
               aria-hidden={index !== activeIndex}
             >
-              <PhotoFrame photo={photo} variant={config.frame} />
+              <PhotoFrame photo={photo} variant={config.frame} eager={isNearActive} />
             </div>
-          ))}
+            );
+          })}
         </motion.div>
 
         {showNav && (
